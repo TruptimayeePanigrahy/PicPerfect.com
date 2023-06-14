@@ -1,7 +1,29 @@
 const mongoose = require("mongoose")
 
 const PhotographerSchema = mongoose.Schema({
-
+    name: {
+        type: String,
+        required: true,
+        minlength: 3
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        minlength: 5
+    },
+    password: {
+        type: String,
+        required: true,
+        minlength: 8
+    },
+    expertise: {
+        type: String,
+        required: false,
+    },
+    availability: {
+        type
+    }
 })
 
 const PhotographerModel = mongoose.model("Photographers", PhotographerSchema)
