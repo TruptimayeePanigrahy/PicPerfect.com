@@ -1,13 +1,65 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const PhotographerSchema = mongoose.Schema({
+    
+  name: { type: String, required: true },
 
-})
+  img1: {
+    type: String,
+  },
+  img2: {
+    type: String,
+  },
+  img3: {
+    type: String,
+  },
+  img3: {
+    type: String,
+  },
 
-const PhotographerModel = mongoose.model("Photographers", PhotographerSchema)
+  location: { type: String, required: true },
 
-module.exports ={PhotographerModel}
+  expertise: { type: String, required: true },
 
+  phone_no: {
+    type: String,
+    required: true,
+  },
+
+  expertise: {
+    type: String,
+    enum: [
+      "Wedding",
+      "Babies & kid",
+      "Special Occasion",
+      "Commercial",
+      "Corporate Events",
+      "fashion & Protfolio",
+      "Nature",
+      "Travel",
+    ],
+  },
+  availability: {
+    type: Boolean,
+
+    required: true,
+  },
+  amount: {
+    type: Number,
+    require: true,
+  },
+  rating: {
+    type: Number,
+    require: true,
+  },
+  description: { type: String, 
+                 required: true
+               },
+});
+
+const PhotographerModel = mongoose.model("Photographers", PhotographerSchema);
+
+module.exports = { PhotographerModel };
 
 // User
 //     - id: (int)
