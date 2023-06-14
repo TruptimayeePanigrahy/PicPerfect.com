@@ -4,38 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "test": "echo \"Error: no test specified\" && exit 1"
-=======
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js"
->>>>>>> bd7cad6cacb0df65cca4c9e08fa6cab3818477e9
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.6.0",
     "mongoose": "^7.2.4",
-    "nodemon": "^2.0.22"
-=======
+    "nodemon": "^2.0.22",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.1.4",
-    "express": "^4.18.2",
     "ioredis": "^5.3.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.2.4",
-    "nodemon": "^2.0.22",
     "passport": "^0.6.0",
     "passport-azure-ad-oauth2": "^0.0.4",
     "passport-google-oauth20": "^2.0.0",
     "winston": "^3.9.0",
     "winston-mongodb": "^5.1.1"
->>>>>>> bd7cad6cacb0df65cca4c9e08fa6cab3818477e9
   }
 }
