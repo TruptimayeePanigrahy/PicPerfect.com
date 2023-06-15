@@ -1,27 +1,24 @@
-const jwt = require("jsonwebtoken");
+const jwt =require('jsonwebtoken')
+const {UserModel} = require("../models/user.model") 
+require("dotenv").config()
+const authMiddleWare = async(req,res,next)=>{
+    try {
+        const token = req.headers.authorization;
+        const decodedToken = jwt.verify(token,process.env.PRIVATE_KEY)
+        const {userId} = decodedToken;
+        //Checking if user exists
+        const user = await UserModel.findById(userId);
+        if(!user){
+            return res.status(401).json({message:"Please Login Again",ok:false})
+        }
+        if(user.isBlocked){
+            return res.status(403).json({message: 'Your account has been Blocked', ok:false})
+        }
+        req.user = user;
+        next()
+    } catch (error) {
+        return res.status(401).json({message:error.message})
+    }
+}
 
-const { redisClient } = require("../helpers/redis");
-
-const auth = async (req, res, next) => {
-  try {
-    const token = req.headers.authorization?.split(" ")[1];
-    if (!token) return res.status(401).send("Please login again");
-    //Blacklisting
-
-    const isBlacklisted = await redisClient.get(token);
-    if (isBlacklisted) return res.send({ msg: "Please login again" });
-
-    //token check
-    const isValid = jwt.verify(token, "ssj");
-    if (!isValid) return res.send({ msg: "Please login again" });
-
-    //set userId in req body
-    req.user = isValid.user;
-    console.log(isValid)
-    next();
-  } catch (error) {
-    res.send({ msg: "error", error: error.message });
-  }
-};
-
-module.exports = { auth };
+module.exports = {authMiddleWare}
