@@ -1,12 +1,12 @@
 const express = require("express");
-
+const {adminrouter}=require("./routes/admin.route")
 
 const {photographerdata} = require("./routes/photographer.route")
 require("dotenv").config()
 const { connection } = require("./config/db");
 
 
-require("dotenv").config()
+
 
 const connection = require("./config/db")
 
@@ -14,6 +14,11 @@ const connection = require("./config/db")
 const app = express()
 app.use(express.json())
 app.use("/pgdata",photographerdata);
+
+app.use("/admin",adminrouter)
+
+
+
 
 app.listen(process.env.port,async(req,res)=>{
     try{
