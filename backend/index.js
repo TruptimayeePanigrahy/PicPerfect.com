@@ -1,20 +1,27 @@
 const express = require("express");
 const { connection, client } = require("./config/db");
+
+
+const { userRoute } = require("./routes/user.route");
+
+
+const { BookingRouter } = require("./routes/booking.route")
+const {adminrouter}=require("./routes/admin.route")
+
 const { logger } = require("./middlewares/logger");
 const { userRoute } = require("./routes/user.routes");
 
 
 const { BookingRouter } = require("./routes/booking.routes")
 const { authRoute } = require("./routes/auth.routes");
+
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(logger);
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
-// app.set('view engine', 'ejs');
+
+app.use("/admin",adminrouter)
 
 app.get("/", (req, res) => {
   try {
@@ -23,36 +30,12 @@ app.get("/", (req, res) => {
     res.send({ "ok": false, "msg": error.message })
   }
 })
-app.use("/user", userRoute);
-const options = {
-  definition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'Node JS API Project for PicPerfect',
-      version: '1.0.0',
-      description:
-        "About : - This is a Photographer Booking application in which you can hire Top quality Photographers or become a Photographer and this is documentation of application PicPerfect.",
-      license: {
-        name: "Pic Perfect"
-      },
-      contact: {
-        name: "Pic Perfect",
-        url: "Picper",
-        email: "paulprany1997@gamil.com",
-      },
-    },
-    servers: [
-      {
-        url: 'http://localhost:3000/'
-      }
-    ]
-  },
-  apis: ['./routes/*.js']
-}
 
+// app.use("/user", userRoute);
 
-app.use("/auth", authRoute);
-app.use("/book", BookingRouter);
+// app.use("/auth", authRoute);
+// app.use("/book", BookingRouter);
+
 app.listen(process.env.PORT, async () => {
   try {
     await connection;
