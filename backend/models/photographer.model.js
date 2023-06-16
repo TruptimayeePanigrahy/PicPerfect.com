@@ -39,11 +39,16 @@ const PhotographerSchema = mongoose.Schema({
         required: false,
     },
     availability: {
+
         type:Boolean,
         required:true
+
     }
 })
 
 const PhotographerModel = mongoose.model("Photographer",PhotographerSchema)
 
-module.exports={PhotographerModel}
+module.exports = { PhotographerModel };
+
+
+
