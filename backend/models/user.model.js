@@ -1,4 +1,5 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+
 
 const UserSchema =  mongoose.Schema({
     name: {
@@ -58,3 +59,4 @@ module.exports ={UserModel}
 //     - photographerId: (int)
 //     - appointmentTime: (string)
 //     - notes: (string)
+

@@ -39,53 +39,12 @@ const PhotographerSchema = mongoose.Schema({
         required: false,
     },
     availability: {
-        type:String,
+        type:Boolean,
         required:true
     }
 })
 
-
-//   location: { type: String, required: true },
-
-//   expertise: { type: String, required: true },
-
-//   phone_no: {
-//     type: String,
-//     required: true,
-//   },
-
-//   expertise: {
-//     type: String,
-//     enum: [
-//       "Wedding",
-//       "Babies & kid",
-//       "Special Occasion",
-//       "Commercial",
-//       "Corporate Events",
-//       "fashion & Protfolio",
-//       "Nature",
-//       "Travel",
-//     ],
-//   },
-//   availability: {
-//     type: Boolean,
-
-//     required: true,
-//   },
-//   amount: {
-//     type: Number,
-//     require: true,
-//   },
-//   rating: {
-//     type: Number,
-//     require: true,
-//   },
-//   description: { type: String, 
-//                  required: true
-//                },
-// });
-
-const PhotographerModel = mongoose.model("Photographers", PhotographerSchema);
+const PhotographerModel = mongoose.model("Photographer",PhotographerSchema)
 
 module.exports = { PhotographerModel };
 
