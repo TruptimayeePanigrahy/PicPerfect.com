@@ -1,9 +1,17 @@
 const mongoose = require("mongoose");
+const { createClient } = require('redis');
 require("dotenv").config();
 
-const connection = mongoose.connect(process.env.MONGO_URL);
+const connection = mongoose.connect(process.env.MONGO);
+const client = createClient({
+    url: process.env.REDIS
+});
 
-module.exports = { connection };
+module.exports = {
+    connection,
+    client
+}
+
 
 
 

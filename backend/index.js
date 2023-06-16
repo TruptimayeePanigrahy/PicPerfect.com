@@ -1,7 +1,7 @@
 const express = require("express");
 const {adminrouter}=require("./routes/admin.route")
 
-const {photographerdata} = require("./routes/photographer.route")
+// const {photographerdata} = require("./routes/photographer.route")
 require("dotenv").config()
 const { connection } = require("./config/db");
 
@@ -13,11 +13,13 @@ const { connection } = require("./config/db");
 
 const app = express()
 app.use(express.json())
-app.use("/pgdata",photographerdata);
+// app.use("/pgdata",photographerdata);
 
 app.use("/admin",adminrouter)
-
-
+app.get("/", async (req,res)=>{
+    res.send("picperfect")
+    console.log("Pic Perfect")
+})
 
 
 app.listen(process.env.port,async(req,res)=>{
