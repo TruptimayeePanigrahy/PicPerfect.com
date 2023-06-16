@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pic Prefect | Dashboard</title>
+    <link rel="stylesheet" href="../Style/photographerDashboard.css" />
+    <link rel="stylesheet" href="../Style/loader.css" />
+    <script src="../Scripts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../Scripts/loader2.js"></script>
+    <link rel="stylesheet" href="../Style/loader2.css" />
+    <style>
+      .loader2 {
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo_name">
+        <a href="../index.html">
+          <img src="./images/logo.png" alt="" />
+        </a>
+      </div>
+      <div class="nav-contents">
+        <!-- <a href="./photographers.html">Hire Photographers</a> -->
+        <!-- <a href="">How it works</a> -->
+        <a id="login" href="login.html">Login</a>
+        <!-- <a id="signup" href="signup.html">Sign up</a> -->
+      </div>
+      <div id="logout2">
+        <div id="logout" onclick="logout()">Sign out</div>
+        <img src="../Img/settings.png" alt="settings" />
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+
+    <div id="events">
+      <div class="box" onclick="queue()">Queue</div>
+      <div class="box" onclick="accepted()">Accepted</div>
+      <div class="box" id="meeting" onclick="meeting()">Meetings</div>
+    </div>
+
+    <div id="cont">
+      <!-- Loader -->
+      <div class="loader" id="loader">
+      </div>
+      <!-- Loader End -->
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Acccept</th>
+            <th>Reject</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Append data here -->
+          <div class="loader2" id="loader2">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            <div class="bar6"></div>
+            <div class="bar7"></div>
+            <div class="bar8"></div>
+            <div class="bar9"></div>
+            <div class="bar10"></div>
+            <div class="bar11"></div>
+            <div class="bar12"></div>
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script src="../Scripts/photographerDashboard.js"></script>
+</html>

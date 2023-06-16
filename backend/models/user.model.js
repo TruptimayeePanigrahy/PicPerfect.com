@@ -1,62 +1,44 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const userSchema = new Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    pass: { type: String, required: true },
+    role: { type: String, enum: ['client', 'photographer','admin'], default: 'client' },
+    meetings: { type:Array,required:true, default: [] },
+    approved: { type: Boolean, default: false },
+    camera: {
+      type: String,
+      default: null
+    },
+    expertise: {
+      type: String,
+      default: null
+    },
+    address: {
+      type: String,
+      default: null
+    },
+    price:{
+      type:Number,
+      default:null
+    },
+    isBlocked:{
+      type:Boolean,
+      default:false
+    }
+  });
 
+const UserModel = mongoose.model("user",userSchema);
 
-const UserSchema =  mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        minlength: 3
-      },
-      email: {
-        type: String,
-        required: true,
-        unique: true,
-        minlength: 5
-      },
-      password: {
-        type: String,
-        required: true,
-        minlength: 8
-      },
-      role: {
-        type: String,
-        enum: ['photographer', 'admin', 'user'],
-        default: 'user'
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now
-      },
-      updatedAt: {
-        type: Date,
-        default: Date.now
-      }
-
-})
-
-const UserModel = mongoose.model("Users", UserSchema)
-
-module.exports ={UserModel}
-
-
-// User
-//     - id: (int)
-//     - name: (string)
-//     - email: (string)
-//     - password: (string)
-
-// Photographer
-//     - id: (int)
-//     - name: (string)
-//     - email: (string)
-//     - password: (string)
-//     - expertise: (string)
-//     - availability: (array)
-
-// Booking
-//     - id: (int)
-//     - customerId: (int)
-//     - photographerId: (int)
-//     - appointmentTime: (string)
-//     - notes: (string)
-
+module.exports = {
+    UserModel
+}
+// const imageSchema = new mongoose.Schema({
+//   name: String,
+//   image: {
+//     data: Buffer,
+//     contentType: String,
+//     userID:String
+//   },
+// });
