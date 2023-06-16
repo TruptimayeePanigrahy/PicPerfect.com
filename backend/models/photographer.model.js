@@ -50,5 +50,3 @@ const PhotographerModel = mongoose.model("Photographer",PhotographerSchema)
 
 module.exports = { PhotographerModel };
 
-
-
