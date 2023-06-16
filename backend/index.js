@@ -3,7 +3,7 @@ const express = require("express");
 const cors=require("cors")
 const {adminrouter}=require("./routes/admin.route")
 
-const {photographerdata} = require("./routes/photographer.route")
+// const {photographerdata} = require("./routes/photographer.route")
 require("dotenv").config()
 const { connection } = require("./config/db");
 
@@ -16,7 +16,7 @@ const { connection } = require("./config/db");
 const app = express()
 app.use(express.json())
 app.use(cors())
-app.use("/pgdata",photographerdata);
+// app.use("/pgdata",photographerdata);
 
 app.use("/admin",adminrouter)
 
