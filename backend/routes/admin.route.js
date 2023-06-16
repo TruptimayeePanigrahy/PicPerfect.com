@@ -3,7 +3,7 @@ const adminrouter=express.Router()
 
 const {adminmodel}=require("../models/admin.model")
 
-adminrouter.post("addadmin",async(req,res)=>{
+adminrouter.post("/addadmin",async(req,res)=>{
     try {
         const data=req.body
         const newadmin=new adminmodel(data)
@@ -22,5 +22,18 @@ adminrouter.get("/getadmin",async(req,res)=>{
         console.log(error)
     }
     })
+
+    adminrouter.patch("/update/:id",async(req,res)=>{
+        const {id}=req.params
+
+        try {
+            await adminmodel.findByIdAndUpdate({_id:id},req.body)
+            res.status(200).send({msg:"Admin updated!"})
+        } catch (error) {
+            console.log(error)
+        }
+    })
+
+    
 
     module.exports={adminrouter}
