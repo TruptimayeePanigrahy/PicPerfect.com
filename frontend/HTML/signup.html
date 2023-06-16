@@ -4,6 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "Popins", sans-serif;
+            box-sizing: border-box;   
+        }
+        #container{
+            margin: auto;
+            text-align: center;
+            width: 30%;
+            border: 1px solid black;
+            margin-top: 30px;
+            padding: 25px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        #container >h1{
+            margin-bottom: 20px;
+        }
+        form{
+
+        }
+        input,select,button{
+            margin:10px;
+            text-align: center;
+            width:80%;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        #submit{
+            /* border-radius: 15px; */
+            background-color: green;
+            color: #fff;
+        }
+        #google, #github{
+            /* border-radius: 15px; */
+            background-color: none;
+        }
+        a{
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        @media screen and (min-width:677)and(max-width:1080px) {
+            #container{
+                width:60%
+            }
+        }
+
+        @media screen and (max-width: 676px){
+            #container{
+                width: 60%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="container">
@@ -20,7 +76,8 @@
             </select>
             <button id="submit">Submit</button>
             <button id="google"><img src="" alt="">Signup with Google</butto>
-            <button id="github"><img src="" alt="">Signup with Github</buttom>
+            <button id="github"><img src="" alt="">Signup with Github</button><br>
+            <a href="./login.html">Already have an account?</a>
         </form>
     </div>
 </body>
