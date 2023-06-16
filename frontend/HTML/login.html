@@ -1,108 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-            font-family: "Popins", sans-serif;
-            box-sizing: border-box;   
-        }
-        body::after {
-            content: '';
-            background-image: url('https://images.pexels.com/photos/53265/pexels-photo-53265.jpeg?cs=srgb&dl=pexels-tyler-hendy-53265.jpg&fm=jpg');
-            background-size: cover;
-            background-position: center center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.9;
-            /* Set the desired opacity value */
-            pointer-events: none;
-            z-index: -1;
-        }
-        #container{
-            margin: auto;
-            text-align: center;
-            width: 30%;
-            border: 1px solid black;
-            margin-top: 30px;
-            padding: 25px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-        #container >h1{
-            margin-bottom: 20px;
-        }
-        input,select,button{
-            margin:10px;
-            text-align: center;
-            width:70%;
-            padding: 5px;
-            border: 1px solid black;
-            border-radius: 10px;
-        }
-        #submit{
-            /* border-radius: 15px; */
-            background-color: green;
-            color: #fff;
-        }
-        #google, #github{
-            /* border-radius: 15px; */
-            background-color: none;
-            /* margin: 15px 35px; */
-            display: flex;
-            margin: 15px 50px ;
-            justify-content: space-evenly;
-        }
-        #google > img{
-            width:15px;
-            height:15px;    
-            /* padding-right: 10px; */
-        }
-        #github > img{
-            width:15px;
-            height: 15px;
-        }
-        a{
-            text-decoration: none;
-            font-size: 15px;
-        }
-        @media screen and (min-width:677)and(max-width:1080px) {
-            #container{
-                width:60%
-            }
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pic Prefect | Login</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../Scripts/loader.js"></script>
+    <link rel="stylesheet" href="../Style/loader.css" />
+    <link rel="stylesheet" href="../Style/loader2.css" />
+    <link rel="stylesheet" href="../Style/login.css" />
+    <script src="../Scripts/loader2.js"></script>
+  </head>
 
-        @media screen and (max-width: 676px){
-            #container{
-                width: 60%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <h1>Login Page</h1>
-        <form action="">
-            <input type="email" placeholder="Enter Email">
-            <input type="password" placeholder="Enter Password">
-            <select name="" id="role">
-                <option value="">Select Role</option>
-                <option value="user">User</option>
-                <option value="photographer">Photographer</option>
-            </select>
-            <button id="submit">Submit</button>
+  <body id="particles-js">
+    <nav>
+      <div class="logo_name">
+        <a href="../index.html">
+          <img src="./images/logo.png" alt="" />
+        </a>
+      </div>
+      <div class="nav-contents">
+        <a href="">For Photographers</a>
+        <a href="">How it works</a>
+        <a id="login" href="login.html">Login</a>
+        <!-- <a href="#" id="signup-link">Login <ion-icon name="caret-down-outline"></ion-icon></a>
+            <div id="dropdown-menu" style="display: none;">
+                <a href="login.html">Login as client</a>
+                <a href="photographer_details.html">Apply for photographer</a>
+            </div> -->
+        <a id="signup" href="signup.html">Sign up</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+    <div class="animated bounceInDown">
+      <div class="container">
+        <!-- Loader -->
+        <div class="loader" id="loader"></div>
+        <!-- Loader End -->
+        <span class="error animated tada" id="msg"></span>
+        <form name="form1" class="box">
+          <div><img src="./images/logo.png" alt="" /></div>
+          <h5>Sign in to your account.</h5>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            id="email"
+            autocomplete="off"
+            required
+          />
+          <i class="typcn typcn-eye" id="eye"></i>
+          <input
+            type="password"
+            name="password"
+            placeholder="Passsword"
+            id="pwd"
+            autocomplete="off"
+            required
+          />
+          <a href="#" class="forgetpass">Forget Password?</a>
+          <input
+            type="submit"
+            value="Sign in"
+            id="submit"
+            class="btn1"
+            required
+          />
+          <div class="loader2" id="loader2">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            <div class="bar6"></div>
+            <div class="bar7"></div>
+            <div class="bar8"></div>
+            <div class="bar9"></div>
+            <div class="bar10"></div>
+            <div class="bar11"></div>
+            <div class="bar12"></div>
+          </div>
         </form>
-        <a href="" id="forgot">Forgot password ?</a>
-        <button id="google"><img src="../Media/google.png" alt="google">Signup with Google</butto>
-        <button id="github"><img src="../Media/github-sign.png" alt="github">Signup with Github</button>
-        <a href="./signup.html">Don't have an account?</a>    
+
+        <div class="logo" id="google">
+          Sign in with
+          <div><img src="../Img/google.png" alt="" /></div>
+        </div>
+        <div class="logo" id="github">
+          Sign in with
+          <div><img src="../Img/github.png" alt="" /></div>
+        </div>
+        <a href="./signup.html" class="dnthave"
+          >Don’t have an account? Sign up</a
+        >
+      </div>
     </div>
-</body>
-<script src="../Scripts/login.js"></script>
+  </body>
+  <script src="./scripts/login.js"></script>
 </html>
