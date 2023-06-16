@@ -9,7 +9,22 @@
             padding: 0;
             margin: 0;
             font-family: "Popins", sans-serif;
-            box-sizing: border-box;   
+            box-sizing: border-box; 
+        }
+        body::after {
+            content: '';
+            background-image: url('https://images.pexels.com/photos/53265/pexels-photo-53265.jpeg?cs=srgb&dl=pexels-tyler-hendy-53265.jpg&fm=jpg');
+            background-size: cover;
+            background-position: center center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.9;
+            /* Set the desired opacity value */
+            pointer-events: none;
+            z-index: -1;
         }
         #container{
             margin: auto;
@@ -23,9 +38,7 @@
         #container >h1{
             margin-bottom: 20px;
         }
-        form{
-
-        }
+        
         input,select,button{
             margin:10px;
             text-align: center;
@@ -42,6 +55,18 @@
         #google, #github{
             /* border-radius: 15px; */
             background-color: none;
+            margin: 15px 35px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #google > img{
+            width:15px;
+            height:15px;    
+            /* padding-right: 10px; */
+        }
+        #github > img{
+            width:15px;
+            height: 15px;
         }
         a{
             text-decoration: none;
@@ -75,8 +100,8 @@
                 <option value="photographer">Photographer</option>
             </select>
             <button id="submit">Submit</button>
-            <button id="google"><img src="" alt="">Signup with Google</butto>
-            <button id="github"><img src="" alt="">Signup with Github</button><br>
+            <button id="google"><img src="../Media/google.png" alt="google">Signup with Google</butto>
+            <button id="github"><img src="../Media/github-sign.png" alt="github">Signup with Github</button>
             <a href="./login.html">Already have an account?</a>
         </form>
     </div>
