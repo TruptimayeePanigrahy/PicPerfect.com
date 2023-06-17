@@ -1,13 +1,5 @@
 const express = require("express");
-const { connection, createRedisClient } = require("./config/db");
 
-const { adminrouter } = require("./routes/admin.route");
-
-// const { logger } = require("./middlewares/logger");
-const { userRoute } = require("./routes/user.routes");
-
-const { BookingRouter } = require("./routes/booking.routes");
-const { authRoute } = require("./routes/auth.routes");
 
 const cors = require("cors");
 require("dotenv").config();
