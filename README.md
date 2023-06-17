@@ -7,11 +7,11 @@ Enthusiastic and professional photographers can apply to become photographers on
 #### Our Project is delpoyed here [PICPERFECT](https://bookmyshoot.netlify.app/)
 
 ### Team 
-- :woman_technologist: [Truptimayi Panigrahy](https://www.linkedin.com/in/rishab-kumar-chaurasiya-a144b4234/)
-- :man_technologist: [Shashwat Mahendra](https://www.linkedin.com/in/kuldeep-tiwari-a3637923a)
-- :man_technologist: [Saikummar Sandru](https://www.linkedin.com/in/mdsaud/)
-- :man_technologist: [Pranay Paul](https://www.linkedin.com/in/nishthakashyap26/)
-- :man_technologist: [Ritesh Kothawade](https://www.linkedin.com/in/anil-reddy-b2a364169/)
+- :woman_technologist: [Truptimayi Panigrahy](https://www.linkedin.com/in/truptimayee-panigrahy/))
+- :man_technologist: [Shashwat Mahendra](https://www.linkedin.com/in/shashwat-mahendra-214598163/)
+- :man_technologist: [Saikumar Sandru]()
+- :man_technologist: [Pranay Paul](https://www.linkedin.com/in/pranay-paul-6a5220257/)
+- :man_technologist: [Ritesh Kothawade](https://www.linkedin.com/in/ritesh-kothawade-800879270/)
 
 ## Features & Pages : page_facing_up:
 
@@ -28,9 +28,9 @@ Enthusiastic and professional photographers can apply to become photographers on
 - **Equipment they use:** Photographers can list the equipment they use for their shoots
 - **Price for an hour:** Photographers can specify their pricing structure, indicating the cost per hour of their photography services.  <br> <br>
 
-`Approval` -Once a photographer receives an appointment request, they have the ability to accept or reject the appointment. 
+`Approval` - Once a photographer receives an appointment request, they have the ability to accept or reject the appointment. 
 
-### For Admin 	:guard:
+### For Admin : guard:
 `All users` - Admin will have the ability to view information about all registered users. This includes access to user profiles, contact details, and any additional information provided during the registration process. <br> <br>
 `Approve` - Once a user has applied for the photographer role, the admin will review the details provided by the user. Based on the assessment, the admin can approve or reject the application. This process ensures that only qualified and suitable individuals are granted the photographer role on the platform. <br> <br>
 
