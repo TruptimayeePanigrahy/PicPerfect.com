@@ -105,20 +105,6 @@ passportGithub.use(
             }
             let name = profile._json.name;
 
-            const user = new UserModel({
-                name,
-                email,
-                pass: uuidv4(),
-            });
-            await user.save();
-            return done(null, user);
-        }
-    )
-);
-
-
-
-
 module.exports = {
     authRoute
 }
