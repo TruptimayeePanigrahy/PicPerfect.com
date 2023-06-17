@@ -29,7 +29,7 @@ form.addEventListener("submit", async(e)=>{
             'success'
         )
         setTimeout(()=>{
-            window.location.href = "./login.html";
+            window.location.href = "../index.html";
 
         },2500)
     } else {

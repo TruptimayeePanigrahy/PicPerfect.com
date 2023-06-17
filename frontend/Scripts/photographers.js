@@ -107,7 +107,7 @@ location_sort?.addEventListener("change", async () => {
             if (!data.photographers.length) {
                 Swal.fire('Oops, Photographers not found at this location ☹')
                 setTimeout(() => {
-                    window.location.href = "./photographers.html"
+                    window.location.href = "../HTML/photographers.html"
                 }, 2500)
             }
         })

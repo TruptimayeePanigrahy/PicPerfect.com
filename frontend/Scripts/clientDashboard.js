@@ -149,7 +149,7 @@ function logout() {
                 'success'
                 )
             localStorage.clear();
-            window.location.href = "./index.html"
+            window.location.href = "../index.html"
         }
     })
 }

@@ -109,7 +109,7 @@ if (!time || !token) {
     footer: ``
   });
   setTimeout(() => {
-    window.location.href = "./index.html";
+    window.location.href = "../index.html";
   }, 2500)
 }
 
@@ -145,7 +145,7 @@ submit.addEventListener("click", () => {
     'success'
   )
   setTimeout(()=>{
-    window.location.href = "./clientDashboard.html"
+    window.location.href = "../HTML/clientDashboard.html"
   },2500)
 })
 

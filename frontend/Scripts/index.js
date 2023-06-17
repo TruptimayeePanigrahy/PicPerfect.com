@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
         place: place.value
     }
     localStorage.setItem("search", JSON.stringify(obj));
-    window.location.href = "./photographers.html";
+    window.location.href = "../HTML/photographers.html";
     
 })
 
