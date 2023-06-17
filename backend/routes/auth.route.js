@@ -1,6 +1,6 @@
 const express = require("express");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-// const GitHubStrategy = require("passport-github2").Strategy;
+
 // const FacebookStrategy = require("passport-facebook").Strategy;
 const { UserModel } = require("../models/user.model");
 // const passportFacebook = require("passport");
