@@ -1,19 +1,12 @@
 const express = require("express");
 const { connection, client } = require("./config/db");
-
-
-
-
-
-
 const {adminrouter}=require("./routes/admin.route")
-
 const { logger } = require("./middlewares/logger");
 const { userRoute } = require("./routes/user.route");
 
 
 const { BookingRouter } = require("./routes/booking.route")
-// const { authRoute } = require("./routes/auth.routes");
+const { authRoute } = require("./routes/auth.route");
 
 const cors = require("cors");
 require("dotenv").config();
@@ -32,8 +25,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/user", userRoute);
-
-// app.use("/auth", authRoute);
+app.use("/auth", authRoute);
 app.use("/book", BookingRouter);
 
 app.listen(process.env.PORT, async () => {
