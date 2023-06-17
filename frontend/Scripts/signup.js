@@ -37,7 +37,7 @@ form.addEventListener("submit", async(e)=>{
             icon: "error",
             title: "Oops...",
             text: response.msg,
-            footer: `<b><u><a href="./login.html">Login Here!</a></u></b>`
+            footer: `<b><u><a href="../HTML/login.html">Login Here!</a></u></b>`
         });
     }
     hideLoader2();

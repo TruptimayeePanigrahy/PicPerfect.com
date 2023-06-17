@@ -88,7 +88,8 @@ nav.scrolled a {
 
 .box h4 {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #5c6bc0; 
+  /* color: #5c6bc0;  */
+  color: #ea1d95; 
   font-size: 18px;
   margin-top:94px;;
 }
@@ -146,9 +147,11 @@ a:hover {
 
 .btn1 {
   border:0;
-  background: #7f5feb;
+  /* background: #7f5feb; */
+  background: #c96ef6;
   color: #dfdeee;
-  border-radius: 100px;
+  /* border-radius: 100px; */
+  border-radius: 10px;
   width: 340px;
   height: 49px;
   font-size: 16px;
@@ -159,7 +162,8 @@ a:hover {
 }
 
 .btn1:hover {
-  background: #5d33e6;
+  /* background: #5d33e6; */
+  background: #aa1af1;
 }
 
 .rmb {
