@@ -1,4 +1,4 @@
-![logo](https://www.instagram.com/p/1WTD1oG1_J/?hl=en)
+![logo](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/logo-no-background.png)
 
 # PICPERFECT :camera_flash:
 A photographer booking system allows logged-in users to book a shoot with their desired photographer. <br>
@@ -70,13 +70,13 @@ Frontend on [Netlify](https://bookmyshoot.netlify.app/)
 ### Take a glimpse of our website
 
 #### Home Page
-![index](https://github.com/git-rishab/accessible-juice-7886/assets/114225283/4975d61a-6fc2-4c14-ae97-acd8be0d586b)
+![index](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/home%20page.png)
 
 
 #### Photographers Dashboard
-![photogrpahers](https://github.com/git-rishab/accessible-juice-7886/assets/114225283/de0d6ff6-2e94-4f02-9c9d-e15098caa654)
+![photogrpahers](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/land%20page.png)
 
 
 #### Photographer Page
 
-![individual](https://github.com/git-rishab/accessible-juice-7886/assets/114225283/05bd5907-0e3c-46f0-9070-d5611afca54a)
+![individual](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/signup.png)
