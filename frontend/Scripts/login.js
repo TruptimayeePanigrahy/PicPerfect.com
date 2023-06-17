@@ -32,13 +32,13 @@ form.addEventListener("submit", async(e)=>{
         localStorage.setItem("token", response.token);
         localStorage.setItem("id",response.id)
         if(response.role == "photographer" && response.approved){
-            window.location.href = "./photographerDashboard.html"
+            window.location.href = "../HTML/photographerDashboard.html"
         } else if(response.role == "photographer"){
-            window.location.href = "./photographer_details.html"
+            window.location.href = "../HTML/photographer_details.html"
         } else if(response.role == "admin"){
-                window.location.href = "./admin/admin.html"
+                window.location.href = "./admin.js"
         }else {
-            window.location.href = "./clientDashboard.html";
+            window.location.href = "../HTML/clientDashboard.html";
         }
     },2000)
 

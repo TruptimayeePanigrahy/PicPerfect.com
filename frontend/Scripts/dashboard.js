@@ -42,11 +42,11 @@ localStorage.setItem("approved",approved);
 
 
 if(role == "photographer" && approved == "true"){
-    window.location.href = "./photographerDashboard.html"
+    window.location.href = "../HTML/photographerDashboard.html"
 } else if(role == "photographer"){
-    window.location.href = "./photographer_details.html"
+    window.location.href = "../HTML/photographer_details.html"
 } else if(role == "admin"){
-    window.location.href = "./admin/admin.html"
+    window.location.href = "./admin.js"
 } else {
-    window.location.href = "./clientDashboard.html";
+    window.location.href = "../HTML/clientDashboard.html";
 }

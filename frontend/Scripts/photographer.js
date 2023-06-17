@@ -121,7 +121,7 @@ form.addEventListener("submit", async (e) => {
     })
     const res = await req.json();
     if (res.ok) {
-        window.location.href = `./payment.html?id=${photographer}&time=${hours}`
+        window.location.href = `../HTML/payment.html?id=${photographer}&time=${hours}`
     } else {
         Swal.fire({
             icon: "error",

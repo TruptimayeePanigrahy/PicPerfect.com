@@ -90,7 +90,7 @@ detailsForm.addEventListener("submit", async (e) => {
       'success'
     )
     setTimeout(() => {
-      window.location.href = "./photographerDashboard.html";
+      window.location.href = "../HTML/photographerDashboard.html";
     }, 2500)
   }
 })
