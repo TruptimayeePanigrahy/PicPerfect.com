@@ -1,7 +1,6 @@
 const express = require("express");
 
 
-
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
@@ -10,7 +9,7 @@ app.use(express.json());
 
 // app.use("/admin",adminrouter)
 
-app.get("/", async(req, res) => {
+app.get("/", async (req, res) => {
   try {
     res.send({ ok: true, msg: "Welcome to Backend of Pic Perfect" });
   } catch (error) {
@@ -37,7 +36,7 @@ app.listen(process.env.PORT, async () => {
     redisClient.on("error", (error) => {
       console.error("Redis connection error:", error);
     });
-    console.log("Connected to Redis Database");
+    console.log("Connected to Database");
   } catch (error) {
     console.log(error.message);
     console.log("Database not Connected");

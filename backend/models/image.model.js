@@ -9,7 +9,7 @@ const imageSchema = new mongoose.Schema({
   });
 
 // define model for image
-const Image = mongoose.model('Image', imageSchema);
+const Image = mongoose.model('IMAGES', imageSchema);
 
 module.exports = {
     Image
