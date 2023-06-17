@@ -91,7 +91,7 @@ form.addEventListener("submit", async (e) => {
             icon: "error",
             title: "",
             text: "Please Login First",
-            footer: `<a href="./login.html">Login here</a>`
+            footer: `<a href="../HTML/login.html">Login here</a>`
         });
         start.value = ''; // Clear the input value if it's in the past
         end.value = '';
@@ -185,7 +185,7 @@ if (isUserName) {
     singupTag.style.display = "none"
     loginTag.textContent = "Hi," + " " + isUserName
     loginTag.style.color = "#dd4545"
-    loginTag.setAttribute("href", "./userDashboard.html");
+    loginTag.setAttribute("href", "../HTML/userDashboard.htmll");
 } else {
     singupTag.style.display = "block"
     loginTag.textContent = "Login"
