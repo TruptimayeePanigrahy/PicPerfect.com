@@ -4,10 +4,12 @@ const { connection, createRedisClient } = require("./config/db");
 const { adminrouter } = require("./routes/admin.route");
 
 // const { logger } = require("./middlewares/logger");
-const { userRoute } = require("./routes/user.routes");
+const { userRoute } = require("./routes/user.route");
 
-const { BookingRouter } = require("./routes/booking.routes");
-const { authRoute } = require("./routes/auth.routes");
+
+const { BookingRouter } = require("./routes/booking.route");
+const { authRoute } = require("./routes/auth.route");
+
 
 const cors = require("cors");
 require("dotenv").config();
@@ -17,9 +19,9 @@ app.use(express.json());
 
 // app.use("/admin",adminrouter)
 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
   try {
-    res.send({ ok: true, msg: "Welcome to Backend of Book My Shoot" });
+    res.send({ ok: true, msg: "Welcome to Backend of Pic Perfect" });
   } catch (error) {
     res.send({ ok: false, msg: error.message });
   }
