@@ -64,59 +64,6 @@ passport.use(
     )
 );
 
-// Github Oauth
-// authRoute.get(
-//     "/github",
-//     passportGithub.authenticate("github", { scope: ["user:email"] })
-// );
-
-// authRoute.get(
-//     "/github/callback",
-//     passportGithub.authenticate("github", {
-//         failureRedirect: "/login",
-//         session: false,
-//     }),
-//     function (req, res) {
-//         let user = req.user;
-//         const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
-
-//         res.redirect(`https://bookmyshoot.netlify.app/dashboard.html?id=${user._id}&token=${token}&role=${user.role}&approved=${user.approved}&username=${user.name}`);
-//     }
-// );
-
-// authRoute.get("/github/failure", (req, res) => {
-//     res.redirect("https://bookmyshoot.netlify.app/login.html")
-// })
-
-// passportGithub.use(
-//     new GitHubStrategy(
-//         {
-//             clientID: process.env.GITHUB_CLIENT_ID,
-//             clientSecret: process.env.GITHUB_CLIENT_SECRET,
-//             callbackURL: "https://bookmyshoot-backend.onrender.com/auth/github/callback",
-//             scope: "user:email",
-//         },
-//         async function (request, accessToken, refreshToken, profile, done) {
-//             let email = profile.emails[0].value;
-
-//             let udata = await UserModel.findOne({ email });
-//             if (udata) {
-//                 return done(null, udata);
-//             }
-//             let name = profile._json.name;
-
-//             const user = new UserModel({
-//                 name,
-//                 email,
-//                 pass: uuidv4(),
-//             });
-//             await user.save();
-//             return done(null, user);
-//         }
-//     )
-// );
-
-
 
 
 module.exports = {

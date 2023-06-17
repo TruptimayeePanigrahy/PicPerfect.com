@@ -1,6 +1,5 @@
 const express = require("express");
-const { UserModel } = require("../models/user.model");
-const BookingRouter = express.Router();
+const { UserModel } = require("../models/user");
 const { BookingModel } = require("../models/booking.model")
 const { NotificationModel } = require("../models/notification.model")
 const { MeetingModel } = require("../models/meeting.model");
