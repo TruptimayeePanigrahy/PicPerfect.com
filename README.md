@@ -7,7 +7,7 @@ Enthusiastic and professional photographers can apply to become photographers on
 #### Our Project is delpoyed here [PICPERFECT](https://bookmyshoot.netlify.app/)
 
 ### Team 
-- :woman_technologist: [Truptimayi Panigrahy](https://www.linkedin.com/in/truptimayee-panigrahy/))
+- :woman_technologist: [Truptimayee Panigrahy](https://www.linkedin.com/in/truptimayee-panigrahy/)
 - :man_technologist: [Shashwat Mahendra](https://www.linkedin.com/in/shashwat-mahendra-214598163/)
 - :man_technologist: [Saikumar Sandru]()
 - :man_technologist: [Pranay Paul](https://www.linkedin.com/in/pranay-paul-6a5220257/)
