@@ -20,7 +20,6 @@ function createRedisClient() {
 }
 
 
-
 module.exports = {
   connection,
   createRedisClient
