@@ -1,6 +1,7 @@
 const express = require("express");
 
 
+
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
@@ -9,9 +10,9 @@ app.use(express.json());
 
 // app.use("/admin",adminrouter)
 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
   try {
-    res.send({ ok: true, msg: "Welcome to Backend of Book My Shoot" });
+    res.send({ ok: true, msg: "Welcome to Backend of Pic Perfect" });
   } catch (error) {
     res.send({ ok: false, msg: error.message });
   }
