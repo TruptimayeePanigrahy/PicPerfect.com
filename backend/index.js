@@ -1,4 +1,8 @@
 const express = require("express");
+const {userRoute} = require("./routes/user.route");
+const {authRoute} =  require("./routes/auth.route");
+const {BookingRouter} = require("./routes/booking.route");
+const {connection, createRedisClient} = require("./config/db")
 
 
 const cors = require("cors");

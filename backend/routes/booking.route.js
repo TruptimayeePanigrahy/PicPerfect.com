@@ -1,11 +1,14 @@
 const express = require("express");
-const { UserModel } = require("../models/user");
+const { UserModel } = require("../models/user.model");
 const { BookingModel } = require("../models/booking.model")
 const { NotificationModel } = require("../models/notification.model")
 const { MeetingModel } = require("../models/meeting.model");
 const { authMiddleWare } = require("../middlewares/auth")
 const { checkRole } = require("../routes/user.route")
 const moment = require("moment");
+
+const BookingRouter = express.Router();
+
 BookingRouter.get("/", async (req, res) => {
   try {
     let data = await BookingModel.find().populate("photographer client","name");
