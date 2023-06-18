@@ -7,7 +7,9 @@ const {connection, createRedisClient} = require("./config/db")
 const {adminrouter} = require("./routes/admin.route");
 
 
+
 const cors = require("cors");
+const { authMiddleWare } = require("./middlewares/auth");
 require("dotenv").config();
 const app = express();
 app.use(cors());
@@ -22,7 +24,7 @@ app.get("/", async (req, res) => {
     res.send({ ok: false, msg: error.message });
   }
 });
-
+// app.use(authMiddleWare)
 app.use("/user", userRoute);
 
 app.use("/auth", authRoute);
