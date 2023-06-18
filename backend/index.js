@@ -1,13 +1,9 @@
 const express = require("express");
-const { connection , createRedisClient} = require("./config/db");
+const {userRoute} = require("./routes/user.route");
+const {authRoute} =  require("./routes/auth.route");
+const {BookingRouter} = require("./routes/booking.route");
+const {connection, createRedisClient} = require("./config/db")
 
-const { adminrouter } = require("./routes/admin.route");
-
-// const { logger } = require("./middlewares/logger");
-const { userRoute } = require("./routes/user.route");
-
-const { BookingRouter } = require("./routes/booking.route");
-const { authRoute } = require("./routes/auth.route");
 
 const cors = require("cors");
 require("dotenv").config();
@@ -45,6 +41,7 @@ app.listen(process.env.PORT, async () => {
       console.error("Redis connection error:", error);
     });
     console.log("Connected to Database");
+    
   } catch (error) {
     console.log(error.message);
     console.log("Database not Connected");
