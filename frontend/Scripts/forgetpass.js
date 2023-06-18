@@ -138,7 +138,7 @@ next3.addEventListener("click", (e) => {
                 next3.disabled = false;
 
                 alert(msg.msg)
-                window.location.href = "../View/login.html"
+                window.location.href = "../HTML/login.html"
             })
 
     } else {

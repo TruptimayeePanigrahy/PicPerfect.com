@@ -5,7 +5,7 @@ body {
 }
 body::after {
     content: "";
-    background-image:url("https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246425885-19c58426-0161-4456-b90c-27b25927ceb6.jpeg");
+    background-image:url("https://i5.walmartimages.com/asr/027e9fdd-0b8c-4496-9323-386538b1c7cb_1.2a9e4b9a2e3f00cfa2be972b64251383.jpeg");
     background-size: cover;
     background-position: center center;
     position: fixed;
@@ -40,7 +40,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(248, 208, 248);
+    background-color: rgb(53, 112, 231);
     padding-top: 1rem;
     padding-bottom: 1rem;
     position: absolute;
@@ -106,7 +106,6 @@ video {
 
 form>input,
 select {
- 
     display: block;
     width: 565px;
     height: 60px;

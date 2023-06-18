@@ -19,23 +19,6 @@ authRoute.get(
     "/google",
     passport.authenticate("google", { scope: ["email", "profile"] })
 );
-authRoute.get(
-    "/google/callback",
-    passport.authenticate('google', {
-        failureRedirect: '/auth/google/failure',
-        session: false
-    }),
-    function (req, res) {
-        let user = req.user;
-        const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
-
-
-    }
-);
-
-authRoute.get("/google/failure", (req, res) => {
-    res.redirect("https://localhost:8185/HTML/login.html")
-})
 
 passport.use(
     new GoogleStrategy(
@@ -63,6 +46,27 @@ passport.use(
         }
     )
 );
+
+authRoute.get("/google/failure", (req, res) => {
+    res.redirect("https://localhost:8185/frontend/HTML/login.html")
+})
+
+authRoute.get(
+    "/google/callback",
+    passport.authenticate('google', {
+        failureRedirect: '/auth/google/failure',
+        session: false
+    }),
+    function (req, res) {
+        console.log(req.user)
+        let user = req.user;
+        const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
+        let refreshtoken=jwt.sign({id:user._id},process.env.secret,{expiresIn:"1d"})
+
+    }
+);
+
+
 
 // Github Oauth
 authRoute.get(
@@ -93,7 +97,7 @@ passportGithub.use(
         {
             clientID: process.env.GITHUB_CLIENT_ID,
             clientSecret: process.env.GITHUB_CLIENT_SECRET,
-            callbackURL: "https://localhost:8185/auth/github/callback",
+            callbackURL: "https://localhost:8185/user/auth/github/callback",
             scope: "user:email",
         },
         async function (request, accessToken, refreshToken, profile, done) {

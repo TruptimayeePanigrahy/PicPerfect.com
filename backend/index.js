@@ -24,7 +24,6 @@ app.get("/", async (req, res) => {
 });
 
 app.use("/user", userRoute);
-
 app.use("/auth", authRoute);
 app.use("/book", BookingRouter);
 

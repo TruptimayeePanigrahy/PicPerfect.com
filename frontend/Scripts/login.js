@@ -55,3 +55,11 @@ form.addEventListener("submit", async (e) => {
 const google = document.getElementById("google");
 const github = document.getElementById("github");
 
+google.addEventListener("click", ()=>{
+  console.log("google");
+  window.location.href = "http://localhost:8185/user/auth/google"
+})
+
+github.addEventListener("click", ()=>{
+  window.location.href = "http://localhost:8185/user/auth/github"
+})

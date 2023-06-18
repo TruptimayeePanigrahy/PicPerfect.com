@@ -11,6 +11,7 @@ const userRoute = express.Router();
 //Set up multer
 const multer = require('multer');
 const storage = multer.memoryStorage();
+const passport = require('passport');
 const upload = multer({ storage: storage });
 const nodemailer = require('nodemailer');
 
@@ -163,7 +164,7 @@ userRoute.post("/register", async (req, res) => {
   });
 })
 
-let sendverificationmail=async(Name,Email,userid)=>{
+let sendverificationmail=async(name,email,userid)=>{
   try {
       let transporter = nodemailer.createTransport({
           service: 'gmail',
@@ -177,9 +178,9 @@ let sendverificationmail=async(Name,Email,userid)=>{
 
       let mailOptions = {
           from: 'kothawaderitesh2010.com',
-          to: Email,
-          subject: 'User Verifecation Mail From QR Insight',
-          html:`<p>hi ${Name} <br> Please click here to <a href="${BaseUrl_Backend}/user/verify?id=${userid}">verify</a>  your mail. </p>`
+          to: email,
+          subject: 'User Verifecation Mail From Pic Perfect',
+          html:`<p>hi ${name} <br> Please click here to <a href="${BaseUrl_Backend}/user/verify?id=${userid}">verify</a>  your mail. </p>`
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
@@ -250,7 +251,6 @@ userRoute.post("/login", async (req, res) => {
 })
 
 let sendotpmail=async(name,email,otp)=>{
-
   try {
       let transporter = nodemailer.createTransport({
           service: 'gmail',
@@ -261,8 +261,8 @@ let sendotpmail=async(name,email,otp)=>{
       });
 
       let mailOptions = {
-          from: 'mr.rajeshkumar7678@gmail.com',
-          to: Email,
+          from: 'kothawaderitesh2010.com',
+          to: email,
           subject: 'OTP verifecation mail',
           html:`<p>HI ${name} <br> please use this OTP to update password.<br> ${otp} </p>`
       };
@@ -298,7 +298,7 @@ userRoute.get('/verify/:token', (req, res)=>{
 userRoute.post("/forgetpass",async(req,res)=>{
   try {
       let {email}=req.body
-      let user=await UserModel.findOne({Email})
+      let user=await UserModel.findOne({email})
       if(user){
           let OTP = "";
           for (let i = 0; i < 6; i++) {
@@ -431,6 +431,23 @@ userRoute.post('/block/:userId', checkRole("admin"), async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 });
+
+userRoute.get('/auth/google',
+
+    passport.authenticate('google', { scope: ['profile','email'] }));
+
+    userRoute.get('/auth/google/callback', 
+    passport.authenticate('google', { failureRedirect: '/login' ,session:false}),
+    function(req, res) {
+      
+      console.log(req.user)
+      const user=req.user
+      let name=user.name
+      let id=user._id
+    
+      res.send(`<a href="http://127.0.0.1:5501/frontend/HTML/index.html?userid=${id}&name=${name}">Click here to continue</a>`)
+
+})
 
 module.exports = {
   userRoute, checkRole
