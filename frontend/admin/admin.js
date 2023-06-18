@@ -37,7 +37,7 @@ logout.addEventListener("click", async (e) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
-           authorization: `${token}`,
+          authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
 
@@ -138,7 +138,7 @@ async function dashboardFetch() {
       method: "GET",
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
-        authorization: `${token}`,
+        authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
@@ -155,7 +155,7 @@ async function dashboardFetch() {
       method: "GET",
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
-        authorization: `${token}`,
+           authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
@@ -214,7 +214,7 @@ ds.forEach((ele) => {
 });
 
 // fetch all registrations / users
-
+const token = localStorage.getItem("token")
 async function fetchAllRegistration() {
   if (!localStorage.getItem("token")) {
     Swal.fire("Login First!", "", "warning");
@@ -223,7 +223,7 @@ async function fetchAllRegistration() {
       method: "GET",
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
-        authorization: `${token}`,
+           authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
@@ -344,7 +344,7 @@ async function fetchAllClients() {
         method: "GET",
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
-          authorization: `${token}`,
+             authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
         .then((res) => res.json())
@@ -447,7 +447,7 @@ async function fetchAllPhotographers() {
         method: "GET",
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
-          authorization: `${token}`,
+             authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
         .then((res) => res.json())
@@ -558,7 +558,7 @@ async function fetchNewRequest() {
     await fetch(`${URL}/user/pending`, {
       method: "GET",
       headers: {
-        authorization: `${token}`,
+           authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
@@ -666,7 +666,7 @@ async function fetchAllBooking() {
       method: "GET",
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
-        authorization: `${token}`,
+           authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((res) => res.json())
@@ -766,7 +766,7 @@ function formatTime(time) {
 	const normalTime = utcTime.toLocaleString().split(",").join(" |");
 	return normalTime;
 }
-const token = localStorage.getItem("token") || "";
+// const token = localStorage.getItem("token") || "";
 
 // ----------approving photographer request
 async function approveRequest(user) {
@@ -778,7 +778,7 @@ async function approveRequest(user) {
     body: JSON.stringify(user),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
-      authorization: `Bearer ${localstorage.getItem("token")}`,
+      authorization: `Bearer ${token}`,
     },
   })
     .then((response) => response.json())
@@ -800,7 +800,7 @@ async function rejectRequest(user) {
       body: JSON.stringify(user),
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
-        authorization: `Bearer ${localstorage.getItem("token")}`,
+        authorization: `Bearer ${token}`,
       },
     });
 
@@ -830,7 +830,7 @@ async function blockUser(user, msg) {
     body: JSON.stringify(user),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
-       authorization: `${token}`,
+      authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   })
     .then((response) => response.json())
