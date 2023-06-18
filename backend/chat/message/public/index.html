@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="screen join-screen active">
+             <div class="form">
+                <h2>Join chatroom</h2>
+                <div class="form-input">
+                    <label>username</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="form-input">
+                    <button id="join-user">Join</button>
+                </div>
+             </div>
+        </div>
+        <div class="screen chat-screen">
+            <div class="header">
+                <div class="logo">chatroom </div>
+                <button id="exit-chat">Exit</button>
+            </div>
+            <div class="messages">
+            </div>
+           <div class="typebox">
+             <input type="text" id="message-input">
+             <button id="send-message">Send</button>
+           </div> 
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="socket.io/socket.io.js"></script> -->
+    <script type="text/javascript" src="code.js"></script>
+    
+</body>
+</html>
