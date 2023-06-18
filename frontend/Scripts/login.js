@@ -1,24 +1,28 @@
-const URL = "https://bookmyshoot-backend.onrender.com"
+const URL = "http://localhost:8185";
 const form = document.querySelector("form");
 const submit = document.getElementById("submit");
+let email=document.getElementById("email")
+let password=document.getElementById("pwd")
 
 form.addEventListener("submit", async(e)=>{
     e.preventDefault();
-    const formData = {
-        email:form.email.value,
-        password:form.password.value
-    }
     submit.style.display = "none";
     showLoader2();
+    let formData = {
+        email:email.value,
+        pass:password.value
+    }
+    console.log(formData)
         
     const request = await fetch(`${URL}/user/login`, {
-        method:"POST",
-        headers:{
-            "Content-type": "application/json"
-        },
-        body:JSON.stringify(formData)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
     const response = await request.json();
+    console.log(response);
     if(response.ok){
         localStorage.setItem("userName", response.userName);
         localStorage.setItem("role",response.role);
@@ -47,7 +51,7 @@ form.addEventListener("submit", async(e)=>{
             icon: "error",
             title: "Oops...",
             text: response.msg,
-            footer: `<b><u><a href="./signup.html">Register Here!</a></u></b>`
+            footer: `<b><u><a href="../HTML/signup.html">Register Here!</a></u></b>`
         });
     }
     submit.style.display = "block";

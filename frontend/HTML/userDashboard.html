@@ -20,12 +20,12 @@
   const role = localStorage.getItem("role");
   const approved = JSON.parse(localStorage.getItem("approved"));
   if (role == "photographer" && approved) {
-    window.location.href = "./photographerDashboard.html"
+    window.location.href = "/frontend/HTML/photographerDashboard.html"
   } else if (role == "photographer") {
-    window.location.href = "./photographer_details.html"
+    window.location.href = "/frontend/HTML/photographer_details.html"
   } else if(role == "admin"){
     // window.location.href = "./admin/admin.html"
-    window.location.href = "../HTML/admin.html"
+    window.location.href = ""
   } else {
     window.location.href = "./clientDashboard.html";
   }
