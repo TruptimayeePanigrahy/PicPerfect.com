@@ -41,6 +41,7 @@ app.listen(process.env.PORT, async () => {
       console.error("Redis connection error:", error);
     });
     console.log("Connected to Database");
+    
   } catch (error) {
     console.log(error.message);
     console.log("Database not Connected");
