@@ -9,7 +9,7 @@ boxes.forEach(box => {
     })
 });
 
-const URL = `https://bookmyshoot-backend.onrender.com`;
+const URL = `http://localhost:8185`;
 const token = localStorage.getItem("token");
 const id = localStorage.getItem("id");
 const tbody = document.querySelector("tbody");

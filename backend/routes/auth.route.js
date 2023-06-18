@@ -1,10 +1,11 @@
 const express = require("express");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
 // const FacebookStrategy = require("passport-facebook").Strategy;
 const { UserModel } = require("../models/user.model");
 // const passportFacebook = require("passport");
 const passportGithub = require("passport");
-const GitHubStrategy = require("passport-github").Strategy;
+
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 require("dotenv").config();
@@ -29,7 +30,7 @@ authRoute.get(
         let user = req.user;
         const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
 
-        res.redirect(`https://localhost:8185/frontend/index.html?id=${user._id}&token=${token}&role=${user.role}&approved=${user.approved}&username=${user.name}`); // change the link to frontend
+
     }
 );
 
