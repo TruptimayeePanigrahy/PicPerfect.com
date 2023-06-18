@@ -15,7 +15,7 @@ const url2 = new URL(currentUrl);
 const searchParams = url2.searchParams;
 
 // const url = "http://localhost:3000"
-const url = "https://bookmyshoot-backend.onrender.com";
+const url = "http://localhost:8185";
 const form = document.querySelector("form");
 const photographer = searchParams.get("id");
 const photographerName = document.getElementById("name")
