@@ -279,6 +279,7 @@ userRoute.post('/block/:userId', checkRole("admin"), async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 });
+
 module.exports = {
   userRoute, checkRole
 }

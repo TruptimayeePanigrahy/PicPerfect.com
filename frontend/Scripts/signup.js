@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const URL = ""
+const URL = "http://localhost:8185";
 
 const signup = document.getElementById("submit");  
 form.addEventListener("submit", async(e)=>{
@@ -37,7 +37,7 @@ form.addEventListener("submit", async(e)=>{
             icon: "error",
             title: "Oops...",
             text: response.msg,
-            footer: `<b><u><a href="../HTML/login.html">Login Here!</a></u></b>`
+            footer: `<b><u><a href="../HTML/signup.html">Signup Here!</a></u></b>`
         });
     }
     hideLoader2();
@@ -49,9 +49,10 @@ const google = document.getElementById("google");
 const github = document.getElementById("github");
 
 google.addEventListener("click", ()=>{
-    window.location.href = "https://bookmyshoot-backend.onrender.com/auth/google"
+    console.log("google");
+    window.location.href = "http://localhost:8185/auth/google"
 })
 
 github.addEventListener("click", ()=>{
-    window.location.href = "https://bookmyshoot-backend.onrender.com/auth/github"
+    window.location.href = "http://localhost:8185/auth/github"
 })
