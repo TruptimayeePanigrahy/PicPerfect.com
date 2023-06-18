@@ -770,19 +770,21 @@ function formatTime(time) {
 
 // ----------approving photographer request
 async function approveRequest(user) {
-	user.approved = true;
+  console.log(user)
+	// user.approved = true;
 
 	
-	await fetch(`${URL}/user/applications/${user.email}`, {
-    method: "PUT",
-    body: JSON.stringify(user),
+	 fetch(`${URL}/user/applications/${user.email}`, {
+    method: "PATCH",
+    body: JSON.stringify({approved:true}),
     headers: {
-      "Content-Type": "application/json; charset=UTF-8",
+      "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
   })
     .then((response) => response.json())
     .then((json) => {
+      console.log("done")
       Swal.fire("Photographer Request Accepted!", "", "success");
     })
     .catch((err) => console.log(err))

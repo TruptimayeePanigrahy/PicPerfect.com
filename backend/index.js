@@ -6,10 +6,12 @@ const { adminrouter } = require("./routes/admin.route");
 // const { logger } = require("./middlewares/logger");
 const { userRoute } = require("./routes/user.route");
 
+
 const { BookingRouter } = require("./routes/booking.route");
 const { authRoute } = require("./routes/auth.route");
 
 const cors = require("cors");
+const { authMiddleWare } = require("./middlewares/auth");
 require("dotenv").config();
 const app = express();
 app.use(cors());
@@ -24,7 +26,7 @@ app.get("/", async (req, res) => {
     res.send({ ok: false, msg: error.message });
   }
 });
-
+// app.use(authMiddleWare)
 app.use("/user", userRoute);
 
 app.use("/auth", authRoute);
