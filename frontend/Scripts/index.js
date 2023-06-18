@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
         place: place.value
     }
     localStorage.setItem("search", JSON.stringify(obj));
-    window.location.href = "../HTML/photographers.html";
+    window.location.href = `../HTML/photographers.html`;
     
 })
 
@@ -57,7 +57,7 @@ if(isUserName){
     singupTag.style.display = "none"
     loginTag.textContent = "Hi," + " " + isUserName
     loginTag.style.color = "#dd4545"
-    loginTag.setAttribute("href","../HTML/userDashboard.html");
+    loginTag.setAttribute("href","../HTML/Dashboard.html");
 }else{
     singupTag.style.display = "block"
     loginTag.textContent = "Login"
