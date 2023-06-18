@@ -9,7 +9,7 @@ boxes.forEach(box => {
     })
 });
 
-const URL = `https://bookmyshoot-backend.onrender.com`;
+const URL = `http://localhost:8185`;
 const token = localStorage.getItem("token");
 const id = localStorage.getItem("id");
 const queueId = document.getElementById("queue");
@@ -218,7 +218,7 @@ async function meet(bookingId, name) {
     })
     document.getElementsByClassName('swal2-confirm swal2-styled')[0].addEventListener("click", async() => {
         const msg = document.getElementById("message").value;
-        const link = `https://bookmyshoot.netlify.app/meeting.html?id=${room}` // link to be changed after deployment
+        const link = `http://localhost:8185?id=${room}`; // link to be changed after deployment
         const request = await fetch(`${URL}/book/meeting/create`,{
             method:"POST",
             headers:{

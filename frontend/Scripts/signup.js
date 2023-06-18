@@ -1,17 +1,25 @@
 const form = document.querySelector("form");
-const URL = ""
+const URL = "http://localhost:8185";
 
-const signup = document.getElementById("submit");  
-form.addEventListener("submit", async(e)=>{
-    e.preventDefault();
-    const formData = {
-        name:form.name.value,
-        email:form.email.value,
-        password:form.password.value,
-        role:formData.role.value
-    }
-    signup.style.display = "none";
-    showLoader2();
+const signup = document.getElementById("submit");
+const client_checked = document.getElementById("radio1");
+const photographer_checked = document.getElementById("radio2");
+console.log("hello");
+form.addEventListener("submit", async (e) => {
+    console.log("change");
+  const checkedValue = document.querySelector(
+    "input[type=radio]:checked"
+  ).value;
+  e.preventDefault();
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    pass: form.pass.value,
+    role: checkedValue,
+  };
+    console.log(formData, "formdata1");
+  signup.style.display = "none";
+  showLoader2();
 
     const request = await fetch(`${URL}/user/register`, {
         method:"POST",
@@ -37,7 +45,7 @@ form.addEventListener("submit", async(e)=>{
             icon: "error",
             title: "Oops...",
             text: response.msg,
-            footer: `<b><u><a href="../HTML/login.html">Login Here!</a></u></b>`
+            footer: `<b><u><a href="../HTML/signup.html">Signup Here!</a></u></b>`
         });
     }
     hideLoader2();
@@ -49,9 +57,10 @@ const google = document.getElementById("google");
 const github = document.getElementById("github");
 
 google.addEventListener("click", ()=>{
-    window.location.href = "https://bookmyshoot-backend.onrender.com/auth/google"
+    console.log("google");
+    window.location.href = "http://localhost:8185/auth/google"
 })
 
 github.addEventListener("click", ()=>{
-    window.location.href = "https://bookmyshoot-backend.onrender.com/auth/github"
+    window.location.href = "http://localhost:8185/auth/github"
 })
