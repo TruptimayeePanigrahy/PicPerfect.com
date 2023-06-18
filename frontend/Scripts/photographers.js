@@ -1,6 +1,6 @@
 let container = document.getElementById('search-results')
 // Fetch the images data from the server
-const url = "https://bookmyshoot-backend.onrender.com"
+const url = "http://localhost:8185";
 
 async function fetchData() {
     try {

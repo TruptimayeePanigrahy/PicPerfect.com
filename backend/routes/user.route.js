@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const tokenList = {};
 const session = require("express-session")
-
+express.json()
 require("dotenv").config()
 const userRoute = express.Router();
 //Set up multer
@@ -159,12 +159,15 @@ userRoute.post("/register", async (req, res) => {
 
 userRoute.post("/login", async (req, res) => {
   try {
+    console.log(req.body);
     const { email, pass } = req.body;
     const user = await UserModel.findOne({ email });
+    console.log(user)
     if (!user) {
       return res.status(401).json({ msg: "User with this email not found", ok: false })
     }
     const isPasswordSame = await bcrypt.compare(pass, user.pass)
+    console.log(isPasswordSame);
     if (!isPasswordSame) {
       return res.status(401).json({ msg: "Invalid email or password", ok: false })
     }
@@ -184,6 +187,7 @@ userRoute.post("/login", async (req, res) => {
     res.status(200).json(response)
   } catch (error) {
     res.status(400).json({ "ok": false, "msg": error.message });
+    console.log(error)
   }
 })
 userRoute.post('/apply', async (req, res) => {
@@ -275,6 +279,7 @@ userRoute.post('/block/:userId', checkRole("admin"), async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 });
+
 module.exports = {
   userRoute, checkRole
 }
