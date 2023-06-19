@@ -4,9 +4,8 @@
 A photographer booking system allows logged-in users to book a shoot with their desired photographer. <br>
 Enthusiastic and professional photographers can apply to become photographers on our website.
 
-#### Our Project is deployed here [PICPERFECT](https://bookmyshoot.netlify.app/)
-### CyclicLink-
-https://tiny-cyan-boa-sock.cyclic.app
+#### Our Project is deployed here [PICPERFECT](https://tiny-cyan-boa-sock.cyclic.app)
+
 ### Team 
 - :woman_technologist: [Truptimayee Panigrahy](https://www.linkedin.com/in/truptimayee-panigrahy/)
 - :man_technologist: [Shashwat Mahendra](https://www.linkedin.com/in/shashwat-mahendra-214598163/)
