@@ -1,4 +1,4 @@
-![logo](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/logo-no-background.png)
+![logo](https://github.com/Shashwat2104/JS-assignments/assets/115514170/a18b703e-a4e6-47d7-87b1-eb8ac75df25b)
 
 # PICPERFECT :camera_flash:
 A photographer booking system allows logged-in users to book a shoot with their desired photographer. <br>
