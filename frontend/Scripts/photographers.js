@@ -23,6 +23,9 @@ let count = document.getElementById("count_div")
 function Display(images, photographers) {
     container.innerHTML = null;
     count.innerHTML = null;
+    // console.log(photographer_images,"img");
+    // console.log(images,"images");
+    // console.log(photographers,"ph");
     let count_title = document.createElement("h4")
     count_title.innerText = +photographers.length + " Photographers😍";
     count.append(count_title)
@@ -30,6 +33,7 @@ function Display(images, photographers) {
         let photographer_div = document.createElement("div");
         let photographer_details = document.createElement("div");
         let photographer_images = document.createElement("div");
+      
         photographer_details.setAttribute("class", "details_div")
         photographer_images.setAttribute("class", "images_div")
         photographer_div.setAttribute("id", `${photographer._id}`)

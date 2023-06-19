@@ -3,6 +3,10 @@ const { UserModel } = require("../models/user.model");
 const { Image } = require("../models/image.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+// const passport = require("passport");
+const nodemailer = require("nodemailer");
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const tokenList = {};
 const session = require("express-session");
 express.json();
@@ -159,11 +163,63 @@ userRoute.post("/register", async (req, res) => {
     try {
       const data = new UserModel({ name, email, pass: hash, role });
       await data.save();
+      sendverificationmail(data.name, data.email, data._id);
+      res.status(200).send({
+        msg: "User Registration Successfull. Please verify Your Email Address.",
+      });
       res.status(200).json({ ok: true, msg: "Registered Successfully" });
     } catch (error) {
       res.status(400).json({ ok: false, msg: error.message });
     }
   });
+});
+
+let sendverificationmail = async (name, email, userid) => {
+  try {
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "kothawaderitesh2010.com",
+        pass: process.env.googlepassword,
+      },
+    });
+
+    const BaseUrl_Backend = `https://angry-cummerbund-newt.cyclic.app`;
+
+    let mailOptions = {
+      from: "kothawaderitesh2010.com",
+      to: email,
+      subject: "User Verifecation Mail From Pic Perfect",
+      html: `<p>hi ${name} <br> Please click here to <a href="${BaseUrl_Backend}/user/verify?id=${userid}">verify</a>  your mail. </p>`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+userRoute.get("/verify", async (req, res) => {
+  try {
+    let { id } = req.query;
+    let userverify = await UserModel.findOne({ _id: id });
+
+    if (!userverify) {
+      return res.status(400).send({ msg: "not valid email" });
+    }
+
+    userverify.ismailverified = true;
+    await userverify.save();
+    res.status(200).send({ msg: "mail verified successfull" });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 userRoute.post("/login", async (req, res) => {
@@ -210,6 +266,99 @@ userRoute.post("/login", async (req, res) => {
     console.log(error);
   }
 });
+
+let sendotpmail = async (name, email, otp) => {
+  try {
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "kothawaderitesh2010.com",
+        pass: process.env.googlepassword,
+      },
+    });
+
+    let mailOptions = {
+      from: "kothawaderitesh2010.com",
+      to: email,
+      subject: "OTP verifecation mail",
+      html: `<p>HI ${name} <br> please use this OTP to update password.<br> ${otp} </p>`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+userRoute.get("/verify/:token", (req, res) => {
+  const { token } = req.params;
+  // Verifying the JWT token
+  jwt.verify(token, "ourSecretKey", function (err, decoded) {
+    if (err) {
+      console.log(err);
+      res.send(
+        "Email verification failed, possibly the link is invalid or expired"
+      );
+    } else {
+      res.send("Email verifified successfully");
+    }
+  });
+});
+
+userRoute.post("/forgetpass", async (req, res) => {
+  try {
+    let { email } = req.body;
+    let user = await UserModel.findOne({ email });
+    if (user) {
+      let OTP = "";
+      for (let i = 0; i < 6; i++) {
+        OTP += Math.floor(Math.random() * 10);
+      }
+      console.log(OTP);
+      client.set("OTP", OTP, "EX", 3600);
+      sendotpmail(user.name, user.email, OTP);
+    }
+    res.send({ userdetails: user });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+userRoute.post("/verifyotp", async (req, res) => {
+  try {
+    let { OTP } = req.body;
+    let otp = await client.get("OTP");
+    if (OTP == otp) {
+      res.status(200).send({ msg: "Otp verified" });
+    } else {
+      res.status(400).send({ msg: "incorrect verified" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+userRoute.put("/updatepass", async (req, res) => {
+  try {
+    let { id } = req.query;
+    let { pass } = req.body;
+    let hashpass = bcrypt.hashSync(pass, 5);
+    let user = await UserModel.findById({ _id: id });
+    user.pass = hashpass;
+    await user.save();
+    console.log(user);
+    res.send({ msg: "password update successfull please login" });
+  } catch (error) {
+    res.send(error);
+  }
+});
+
 userRoute.post("/apply", authMiddleWare, async (req, res) => {
   const { name, email, camera, expertise, address, samplePics } = req.body;
   try {

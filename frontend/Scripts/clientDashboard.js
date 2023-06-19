@@ -101,11 +101,11 @@ function formatTime(time) {
 async function allPhotographer() {
     showLoader2();
     const req = await fetch(`${URL}/book/requests`, {
-        method:"GET",
-        headers: {
-            "Content-type": "application/json",
-            "authorization": token
-        }
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     });
     const res = await req.json();
     createDom(res, "all");
