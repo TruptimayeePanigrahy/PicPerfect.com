@@ -12,13 +12,13 @@
 .loader2 div {
     width: 8%;
     height: 24%;
-    background: rgb(44, 44, 44);
+    background: rgb(132, 81, 249);
     position: absolute;
     left: 50%;
     top: 30%;
     opacity: 0;
     border-radius: 50px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3px rgba(247, 87, 249, 0.2);
     animation: fade458 1s linear infinite;
 }
 

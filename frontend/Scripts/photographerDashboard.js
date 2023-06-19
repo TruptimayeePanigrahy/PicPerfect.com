@@ -125,12 +125,12 @@ function createDom(data, status) {
 async function queue() {
     showLoader2();
     const request = await fetch(`${URL}/book/requests/pending`, {
-        method: "GET",
-        headers: {
-            "Content-type": "application/json",
-            "authorization": token
-        },
-    })
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const pendingRequests = await request.json();
     createDom(pendingRequests, "pending")
 }
@@ -144,12 +144,12 @@ function formatTime(time) {
 async function accepted() {
     showLoader2();
     const request = await fetch(`${URL}/book/requests/accepted`, {
-        method: "GET",
-        headers: {
-            "Content-type": "application/json",
-            "authorization": token
-        },
-    })
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const acceptedRequest = await request.json();
     createDom(acceptedRequest, "accepted")
 }
@@ -188,14 +188,14 @@ async function sendResponse(id, status) {
         notification = `Sorry! ${photographer.user.name} won't be available at the given time interval`
     }
 
-    const request = await fetch(`${URL}/book/requests/${id}`,{
-        method:"POST",
-        headers:{
-            "Content-type": "application/json",
-            "authorization": token
-        },
-        body:JSON.stringify({ status, notification })
-    })
+    const request = await fetch(`${URL}/book/requests/${id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ status, notification }),
+    });
     queue();
 }
 async function meet(bookingId, name) {
@@ -219,20 +219,25 @@ async function meet(bookingId, name) {
     document.getElementsByClassName('swal2-confirm swal2-styled')[0].addEventListener("click", async() => {
         const msg = document.getElementById("message").value;
         const link = `http://localhost:8185?id=${room}`; // link to be changed after deployment
-        const request = await fetch(`${URL}/book/meeting/create`,{
-            method:"POST",
-            headers:{
-                "Content-type": "application/json",
-                "authorization": token
-            },
-            body:JSON.stringify({msg,photographer:photographer.user._id,link,name})
-        })
+        const request = await fetch(`${URL}/book/meeting/create`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            msg,
+            photographer: photographer.user._id,
+            link,
+            name,
+          }),
+        });
         
         const request2 = await fetch(`${URL}/book/${bookingId}/notifications`,{
             method:"POST",
             headers:{
                 "Content-type": "application/json",
-                "authorization": token
+                Authorization: `Bearer ${token}`,
             },
             body:JSON.stringify({message:`${msg},${link},${photographer.user.name}`})
         })
@@ -245,7 +250,7 @@ async function meeting(){
         method:"GET",
         headers:{
             "Content-type": "application/json",
-            "authorization": token
+            Authorization: `Bearer ${token}`,
         }
     })
     const res = await req.json();

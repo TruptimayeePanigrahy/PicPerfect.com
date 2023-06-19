@@ -35,7 +35,7 @@ form.addEventListener("submit", async (e) => {
       } else if (response.role == "admin") {
         window.location.href = "../admin/admin.html";
       } else {
-        window.location.href = "../HTML/clientDashboard.html";
+        window.location.href = "../index.html";
       }
     }, 2000);
   } else {

@@ -40,14 +40,21 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(248, 208, 248);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.627);
+    /* padding-top: 1rem; */
+    /* padding-bottom: 1rem; */
     position: absolute;
     z-index: 1;
     position: fixed;
+    padding: 0.5rem 0;
     transition: padding-bottom padding-top background-color 0.5s ease;
 }
+
+nav a:hover {
+    /* color: #fb07aa; */
+    text-decoration: underline #fb07aa ;
+    text-decoration-thickness: 2px; 
+  }
 
 nav.scrolled {
     background-color: #ffffff;
@@ -61,7 +68,7 @@ nav.scrolled a {
 }
 
 .nav-contents {
-    margin-left: 20%;
+    margin-left: -10%;
     display: flex;
     gap: 3rem;
 }
@@ -83,7 +90,8 @@ video {
    /* border: 2px solid  saddlebrown; */
     text-align: center;
     padding: 3rem;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4f0;
+    /* border: 2px solid blue; */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px 1px, rgba(0, 0, 0, 0.06) 0px 2px 4px 1px;
 }
 

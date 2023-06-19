@@ -198,6 +198,7 @@ ion-icon {
 #time_btn {
     color: white;
     background-color: #dd4545;
+    border: 3px solid blueviolet;
     border: none;
     padding: 0.5rem;
     font-size: small;

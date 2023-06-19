@@ -111,14 +111,24 @@ form.addEventListener("submit", async (e) => {
     const utcTime = selectedTime.toISOString();
     const utcTime2 = selectedTime2.toISOString();
 
+    // const token = localStorage.getItem("token");
+    // if (!token) {
+    //   console.error("Token is not available");
+    //   return;
+    // }
+
     const req = await fetch(`${url}/book/book`, {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json",
-            "authorization": token
-        },
-        body: JSON.stringify({ photographerId: userData._id, startTime: utcTime, endTime: utcTime2 })
-    })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        photographerId: userData._id,
+        startTime: utcTime,
+        endTime: utcTime2,
+      }),
+    });
     const res = await req.json();
     if (res.ok) {
         window.location.href = `../HTML/payment.html?id=${photographer}&time=${hours}`

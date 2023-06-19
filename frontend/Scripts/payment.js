@@ -1,7 +1,7 @@
 /*
 See on github: https://github.com/muhammederdem/credit-card-form
 */
-const url = "https://bookmyshoot-backend.onrender.com";
+const url = "http://localhost:8185";
 new Vue({
   el: "#app",
   data() {

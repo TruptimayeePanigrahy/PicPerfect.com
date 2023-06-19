@@ -30,14 +30,12 @@ if (dropZone) {
   // remove highlight when item is dragged out of the drop zone
   ["dragleave", "drop"].forEach((eventName) => {
     dropZone.addEventListener(
-      
       eventName,
       () => {
         dropZone.classList.remove("dragover");
         console.log("drop");
       },
       false
-      
     );
   });
 
@@ -61,17 +59,18 @@ if (dropZone) {
 
 // handle files and add them to FormData object
 async function handleFiles(files) {
-  console.log("form");
   const formData = new FormData(uploadForm);
   for (let i = 0; i < files.length; i++) {
     formData.append("image", files[i]);
   }
+  const token = localStorage.getItem("token");
+
   // send formData using fetch API
   await fetch(`${url}/user/upload`, {
-  
     method: "POST",
     headers: {
-      Authorization: localStorage.getItem("token"),
+      Authorization: `Bearer ${token}`,
+      // "Content-Type": "multipart/form-data",
     },
     body: formData,
   })
@@ -83,9 +82,33 @@ async function handleFiles(files) {
       console.error(error);
     });
 }
+// async function handleFiles(files) {
+//   console.log("form");
+//   const formData = new FormData(uploadForm);
+//   for (let i = 0; i < files.length; i++) {
+//     formData.append("image", files[i]);
+//   }
+//   // send formData using fetch API
+//   const token = localStorage.getItem("token");
+
+//   try {
+//     const response = await fetch(`${url}/user/upload`, {
+//       method: "POST",
+//       headers: {
+//         Authorization: `Bearer ${token}`, // include 'Bearer' before the token
+//         "Content-Type": "multipart/form-data",
+//       },
+//       body: formData,
+//     });
+
+//     const data = await response.json();
+//     console.log("Success:", data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 detailsForm.addEventListener("submit", async (e) => {
-  console.log("hello");
   e.preventDefault();
   const formData = {
     camera: detailsForm.camera.value,
@@ -94,18 +117,21 @@ detailsForm.addEventListener("submit", async (e) => {
     price: detailsForm.price.value,
   };
 
+  const token = localStorage.getItem("token");
   const request = await fetch(`${url}/user/submit_photographer_details`, {
     // console.log("jjj");
+    //
+
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      Authorization: localStorage.getItem("token"),
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(formData),
   });
 
   const response = await request.json();
-
+  console.log("fd3", formData);
   if (response) {
     Swal.fire(
       "Your Registration is Successfull",
