@@ -98,13 +98,19 @@ Frontend on [Netlify](https://bookmyshoot.netlify.app/)
 ### Take a glimpse at our website
 
 #### Home Page
-![index](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/home%20page.png)
+![index](https://github.com/Shashwat2104/JS-assignments/assets/115514170/24b69ae5-0e7e-45c4-aad7-4f4cb3f2343d)
 
 
 #### Photographers Dashboard
-![photogrpahers](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/land%20page.png)
+![photogrpahers](https://github.com/Shashwat2104/JS-assignments/assets/115514170/93fe1e50-d706-426c-bc1c-93395fb59d75)
 
 
 #### Photographer Page
 
-![individual](https://github.com/TruptimayeePanigrahy/true-mine-3269/blob/main/frontend/Media/signup.png)
+![individual](https://github.com/Shashwat2104/JS-assignments/assets/115514170/cd2c3c4f-8743-47c1-a4f7-f2addc7539b0)
+
+![Signup](https://github.com/Shashwat2104/JS-assignments/assets/115514170/5fe1b564-f915-41cf-8ed9-ea7750f17eb4)
+
+![Dashboard](https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246816872-bc30bd48-aada-4fdb-8629-0b12cfe5d69d.png)
+
+![Book a photographer](https://github.com/Shashwat2104/JS-assignments/assets/115514170/bcc86f40-8679-4a06-8f32-77bf7a747d98)
