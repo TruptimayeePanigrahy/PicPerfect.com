@@ -79,11 +79,7 @@ Frontend on [Netlify](https://6490a14444734c17a14f1627--incredible-crostata-c451
 
 <br/>
 
-# User flow & Authentication Design ✅
 
-![png](https://user-images.githubusercontent.com/112753481/229455850-3ca71159-9d7c-411e-af9a-04ea5058cf38.jpeg)
-
----
 
 ### Take a glimpse at our website
 
