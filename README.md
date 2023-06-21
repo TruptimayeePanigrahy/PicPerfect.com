@@ -55,7 +55,7 @@ Frontend on [Netlify](https://6490a14444734c17a14f1627--incredible-crostata-c451
 
 | Node.js                                                                                                                         | Express.js                                                                                                                      | ChatGPT                                                                                                                         | MongoDB                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| <img width="70px" src="https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png"> | <img width="75px" src="https://user-images.githubusercontent.com/112753481/229164589-4e724000-542d-4deb-9e11-cca7739c2b01.png"> | <img width="60px" src="https://user-images.githubusercontent.com/112753481/229306156-d2f82fe0-abb5-469a-9dfd-af3207e1e421.png"> | <img width="75px" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png"> |
+| <img width="70px" src="https://user-images.githubusercontent.com/112753481/229047696-de3bf177-16a0-4161-a140-dd89e4fe7b22.png"> | <img width="75px" src="https://user-images.githubusercontent.com/112753481/229164589-4e724000-542d-4deb-9e11-cca7739c2b01.png"> |  <img width="75px" src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png"> | <img width="75px" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png"> |
 
 <!-- | <img width="75px" src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png">  -->
 
@@ -71,9 +71,9 @@ Frontend on [Netlify](https://6490a14444734c17a14f1627--incredible-crostata-c451
 
 ### \* Yet to be implemented:-
 
-| Redis                                                                                                                          |
+| socket.io(video calling)                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------ |
-| <img width="75px" src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png"> |
+| |
 
 ---
 
