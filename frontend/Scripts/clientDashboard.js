@@ -9,7 +9,7 @@ boxes.forEach(box => {
     })
 });
 
-const URL = `https://rose-greyhound-cape.cyclic.app/`;
+const URL = `https://pic-perfect.onrender.com`;
 const token = localStorage.getItem("token");
 const id = localStorage.getItem("id");
 const tbody = document.querySelector("tbody");

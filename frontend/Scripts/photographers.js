@@ -1,6 +1,6 @@
 let container = document.getElementById('search-results')
 // Fetch the images data from the server
-const url = "https://rose-greyhound-cape.cyclic.app/";
+const url = "https://pic-perfect.onrender.com";
 console.log("hii")
 async function fetchData() {
     try {

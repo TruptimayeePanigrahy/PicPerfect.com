@@ -1,7 +1,7 @@
 /*
 See on github: https://github.com/muhammederdem/credit-card-form
 */
-const url = "https://rose-greyhound-cape.cyclic.app/";
+const url = "https://pic-perfect.onrender.com";
 new Vue({
   el: "#app",
   data() {

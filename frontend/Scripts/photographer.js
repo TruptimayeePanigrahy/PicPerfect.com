@@ -15,7 +15,7 @@ const url2 = new URL(currentUrl);
 const searchParams = url2.searchParams;
 
 // const url = "http://localhost:3000"
-const url = "https://rose-greyhound-cape.cyclic.app/";
+const url = "https://pic-perfect.onrender.com";
 const form = document.querySelector("form");
 const photographer = searchParams.get("id");
 const photographerName = document.getElementById("name")

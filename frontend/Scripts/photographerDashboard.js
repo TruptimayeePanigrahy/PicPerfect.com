@@ -9,7 +9,7 @@ boxes.forEach(box => {
     })
 });
 
-const URL = `https://rose-greyhound-cape.cyclic.app/`;
+const URL = `https://pic-perfect.onrender.com`;
 const token = localStorage.getItem("token");
 const id = localStorage.getItem("id");
 const queueId = document.getElementById("queue");
@@ -218,7 +218,7 @@ async function meet(bookingId, name) {
     })
     document.getElementsByClassName('swal2-confirm swal2-styled')[0].addEventListener("click", async() => {
         const msg = document.getElementById("message").value;
-        const link = `https://rose-greyhound-cape.cyclic.app/?id=${room}`; // link to be changed after deployment
+        const link = `https://pic-perfect.onrender.com?id=${room}`; // link to be changed after deployment
         const request = await fetch(`${URL}/book/meeting/create`, {
           method: "POST",
           headers: {

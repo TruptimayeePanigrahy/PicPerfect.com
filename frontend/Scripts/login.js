@@ -1,4 +1,4 @@
-const URL = "https://rose-greyhound-cape.cyclic.app/";
+const URL = "https://pic-perfect.onrender.com";
 const form = document.querySelector("form");
 const submit = document.getElementById("submit");
 
@@ -56,9 +56,9 @@ const google = document.getElementById("google");
 const github = document.getElementById("github");
 
 google.addEventListener("click", () => {
-  window.location.href = "https://rose-greyhound-cape.cyclic.app//auth/google";
+  window.location.href = "https://pic-perfect.onrender.com/auth/google";
 });
 
 github.addEventListener("click", () => {
-  window.location.href = "https://rose-greyhound-cape.cyclic.app//auth/github";
+  window.location.href = "https://pic-perfect.onrender.com/auth/github";
 });

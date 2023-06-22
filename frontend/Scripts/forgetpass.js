@@ -1,4 +1,4 @@
-const BaseUrl_forgotPassword = `https://rose-greyhound-cape.cyclic.app/`;
+const BaseUrl_forgotPassword = `https://pic-perfect.onrender.com`;
 
 var form1 = document.getElementById("raj-form1");
 var form2 = document.getElementById("raj-form2");
