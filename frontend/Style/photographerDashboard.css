@@ -8,12 +8,12 @@
 }
 body{
     font-family: sans-serif;
-    background-color: #E5E7EB;
+    background-color: #e5e7ebbd;
 }
 
 body::after {
     content: "";
-    background-image: url("https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246425885-19c58426-0161-4456-b90c-27b25927ceb6.jpeg");
+    background-image: url("https://img.freepik.com/free-vector/gradient-black-background-with-realistic-elements_23-2149154117.jpg?size=626&ext=jpg&ga=GA1.1.467505643.1667761873&semt=ais");
     background-size: cover;
     background-position: center center;
     position: fixed;
@@ -63,7 +63,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: rgba(14, 14, 14, 0.72);
     margin-bottom: 50px;
     height: 60px;
     position: sticky;
@@ -107,15 +107,15 @@ nav {
     width: 80px;
     padding: 10px 10px;
     border: none;
-    border-radius: 7px;
+    border-radius: 50px;
     color: #fff;
-    font-weight: 500;
-    background-color: #DD4545;
+    font-weight: 400;
+    background-color: #dd45bfcd;
     font-size: 20px;
 }
 #logout:hover{
     cursor: pointer;
-    background-color: #EC9797;
+    background-color: #eac7ebf0;
 }
 #name {
     display: flex;
@@ -132,7 +132,7 @@ nav {
     margin-right: 20px;
     display: flex;
     align-items: center;
-    background-color: #5184eb;
+    background-color: #eb51e3c8;
     color: #fff;
     font-weight: 500;
     z-index: 1;
@@ -140,7 +140,7 @@ nav {
     border: none;
 }
 #events > div:nth-child(1){
-    background-color: #fff;
+    background-color: #ffffffbe;
     color: black;
 }
 #events > div:hover{
@@ -154,7 +154,7 @@ nav {
     height: 500px;
     overflow: auto;
     padding: 30px 0px ;
-    background-color: #fff;
+    background-color: #ffffffc5;
 }
 
 table{
@@ -212,7 +212,7 @@ tbody > tr:hover{
     color: #d10d0d;
 }
 .meet > div{
-    background-color: #5184eb;
+    background-color: #e261c2bb;
     color: white;
     padding: 10px;
     text-align: center;
@@ -220,7 +220,7 @@ tbody > tr:hover{
 }
 .meet > div:hover{
     cursor: pointer;
-    background-color: #7ba4f5;
+    background-color: #eb7bf5da;
 }
 #settings:hover{
     cursor: pointer;
@@ -232,7 +232,7 @@ a{
     text-decoration: none;
 }
 .link div{
-    background-color: #5184eb;
+    background-color: #eb51eb;
     color: #fff;
     border-radius: 4px;
     padding: 10px;

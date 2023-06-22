@@ -8,7 +8,7 @@ body, html {
 
 body::after {
   content: "";
-  background-image: url("https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246425885-19c58426-0161-4456-b90c-27b25927ceb6.jpeg");
+  background-image: url("https://img.freepik.com/premium-photo/top-view-flat-lay-film-camera-case-lies-black-table-notebooks-pen-concept-workspace-artist-photographer-advertising-space_250014-360.jpg?w=1060");
   background-size: cover;
   background-position: center center;
   position: fixed;
@@ -23,7 +23,9 @@ body::after {
 }
 a {
   text-decoration: none;
-  color: white;
+  /* color: white; */
+  color: black;
+  font-weight: 900;
 }
 .logo_name>a>img {
   width: 40%;
@@ -34,7 +36,9 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #fff;
+  background-color: #0000008a;
+  /* background-color: #e0ff9e; */
+  
   padding-top: 1rem;
   padding-bottom: 1rem;
   position: absolute;
@@ -67,7 +71,7 @@ nav.scrolled a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #F7FAFC;
+  background-color: #f7fafcd0;
 }
 
 .container{
@@ -78,10 +82,10 @@ nav.scrolled a {
   text-align: center;
   transform: translateX(-50%);
   border-radius: 9px;
-  border-top: 10px solid #79a6fe;
-  border-bottom: 10px solid #8BD17C;
+  border-top: 10px solid #fe79ee;
+  border-bottom: 10px solid #fe79ee;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-color: #fff;
+  background-color: #ffffffd9;
   width: 400px;
   padding: 30px;
 }
@@ -133,12 +137,15 @@ nav.scrolled a {
 }
 
 a{
-  color: #5c7fda;
+  font-size: large;
+  color: #ebe2e2c5;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: underline #fb07aa ;
+    text-decoration-thickness: 2px; 
+    transition: text-decoration 0.3s;
 }
 
  label input[type = "checkbox"] {
@@ -148,7 +155,7 @@ a:hover {
 .btn1 {
   border:0;
   /* background: #7f5feb; */
-  background: #c96ef6;
+  background: #c96ef6c8;
   color: #dfdeee;
   /* border-radius: 100px; */
   border-radius: 10px;
@@ -163,7 +170,7 @@ a:hover {
 
 .btn1:hover {
   /* background: #5d33e6; */
-  background: #aa1af1;
+  background: #a91af1c3;
 }
 
 .rmb {
@@ -175,6 +182,7 @@ a:hover {
 }
 
 .forgetpass {
+  color: rgba(0, 0, 0, 0.71);
   position: relative;
   float: right;
   right: 28px;
@@ -195,7 +203,7 @@ a:hover {
 }
 
 .error {
-  background: #ff3333;
+  background: #ff3333c5;
   text-align: center;
   width: 337px;
   height: 20px;
@@ -215,6 +223,7 @@ a:hover {
 }
 
 .logo:hover{
+  background-color: #fc9fdd48;
   cursor: pointer;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

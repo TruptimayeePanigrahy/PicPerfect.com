@@ -1,4 +1,4 @@
-const URL = "http://localhost:8185";
+const URL = "https://rose-greyhound-cape.cyclic.app/";
 const form = document.querySelector("form");
 const submit = document.getElementById("submit");
 
@@ -55,3 +55,10 @@ form.addEventListener("submit", async (e) => {
 const google = document.getElementById("google");
 const github = document.getElementById("github");
 
+google.addEventListener("click", () => {
+  window.location.href = "https://rose-greyhound-cape.cyclic.app//auth/google";
+});
+
+github.addEventListener("click", () => {
+  window.location.href = "https://rose-greyhound-cape.cyclic.app//auth/github";
+});

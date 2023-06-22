@@ -5,7 +5,7 @@ body {
 }
 body::after {
     content: "";
-    background-image:url("https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246425885-19c58426-0161-4456-b90c-27b25927ceb6.jpeg");
+    background-image:url("https://wallpapercave.com/wp/wp1933315.jpg");
     background-size: cover;
     background-position: center center;
     position: fixed;
@@ -54,6 +54,7 @@ nav a:hover {
     /* color: #fb07aa; */
     text-decoration: underline #fb07aa ;
     text-decoration-thickness: 2px; 
+    transition: text-decoration 0.3s;
   }
 
 nav.scrolled {
@@ -183,7 +184,7 @@ input[type="submit"]:hover {
     height: auto;
     font-size: 18px;
     /* background-color: #FCEFEF; */
-    background-color:rgba(249, 230, 255, 1);
+    background-color:rgba(249, 230, 255, 0.81);
     padding: 20px;
     border-radius: 10px;
 }
@@ -216,7 +217,7 @@ input[type="submit"]:hover {
     padding: 1rem;
     border-radius: 10px;
     /* background: #FCEFEF; */
-     background-color:rgba(249, 230, 255, 1);
+     background-color:rgba(249, 230, 255, 0.705);
 }
 
 .index_reviews div p {
@@ -271,9 +272,9 @@ input[type="submit"]:hover {
 
 .footer {
   /* background-color: #222; */
-  background-color:rgb(219, 195, 195);
+  background-color:rgba(219, 195, 195, 0.762);
 
-  color: #a104f6;
+  color: #fbfbfb;
   padding: 30px 0;
 }
 
@@ -306,7 +307,7 @@ input[type="submit"]:hover {
 }
 
 .footer-links ul li a {
-  color: #8505cf;
+  color: #1414159b;
   /* color: #05cf34; */
   text-decoration: none;
   font-weight: bold;
@@ -315,7 +316,8 @@ input[type="submit"]:hover {
 }
 
 .footer-links ul li a:hover {
-  color: #ff9800;
+   text-decoration: underline #fb07aaa7 ;
+  text-decoration-thickness: 5px; ;
 }
 
 .footer-social ul {
@@ -336,7 +338,7 @@ input[type="submit"]:hover {
 }
 
 .footer-social ul li a:hover {
-  color: #ff9800;
+  color: #fb07aaa7;
 }
 
 .footer-info {
@@ -365,8 +367,8 @@ input[type="submit"]:hover {
 }
 
 .footer-gallery h3 {
-  color: #9e03ff;
-    /* color: #05cf34; */
+  color: #05050592;
+   
   font-size: 25px;
   margin-bottom: 10px;
 }
@@ -450,7 +452,7 @@ input[type="submit"]:hover {
         width: auto;
         left: 47%;
         flex-direction: column;
-        background-color: #f9f9f9;
+        background-color: #f9f9f9ba;
         padding: 20px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }

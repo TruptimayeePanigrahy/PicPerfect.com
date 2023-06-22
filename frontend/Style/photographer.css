@@ -9,7 +9,7 @@ body {
 
 body::after {
     content: "";
-    background-image: url("https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246425885-19c58426-0161-4456-b90c-27b25927ceb6.jpeg");
+    background-image: url("https://img.freepik.com/premium-photo/blue-camera-surrounded-by-colorful-balls-purple-3d-render_179321-2.jpg?w=1060");
     background-size: cover;
     background-position: center center;
     position: fixed;
@@ -25,7 +25,7 @@ body::after {
 
 a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgba(224, 218, 218, 0.924);
 }
 
 #logo {
@@ -42,7 +42,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: rgba(18, 17, 17, 0.733);
     height: 70px;
     position: fixed;
     z-index: 2;
@@ -61,7 +61,9 @@ nav {
 }
 
 .nav-contents>a:hover {
-    color: #dd4545;
+    text-decoration: underline #fb07aa ;
+    text-decoration-thickness: 2px; 
+    transition: text-decoration 0.3s;
 }
 
 .swiper {
@@ -70,7 +72,7 @@ nav {
     position: relative;
     /* top: 50px; */
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #ffffffc6;
 }
 
 .swiper-slide>img {
@@ -90,12 +92,12 @@ nav {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 20px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #e8dedea6;
 }
 
 #aboutme, #works {
     padding: 15px;
-    background-color: #dd454515;
+    background-color: #dd45455d;
     border-radius: 5px;
 }
 
@@ -103,7 +105,7 @@ nav {
     padding: 2rem;
     border-radius: 8px;
     height: fit-content;
-    background-color: #fff;
+    background-color: #ffffffde;
     box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 
@@ -120,7 +122,7 @@ select {
 
 .book input[type="submit"] {
     color: white;
-    background-color: #dd4545;
+    background-color: #960396b6;
     border: none;
     font-weight: bold;
     font-size: 17px;
@@ -128,11 +130,11 @@ select {
 
 .book input[type="submit"]:hover {
     cursor: pointer;
-    background-color: #df8585;
+    background-color: #cd85dfc6;
 }
 
 label {
-    color: #dd4545cf;
+    color: #b745ddcf;
     font-weight: bold;
     font-size: 14px;
 }
@@ -148,7 +150,7 @@ input:focus {
 }
 
 #works>p {
-    color: gray;
+    color: rgba(53, 52, 52, 0.881);
 }
 
 
@@ -197,7 +199,7 @@ ion-icon {
 
 #time_btn {
     color: white;
-    background-color: #dd4545;
+    background-color: #dd45db;
     border: 3px solid blueviolet;
     border: none;
     padding: 0.5rem;
@@ -260,7 +262,7 @@ ion-icon {
         width: auto;
         left: 75%;
         flex-direction: column;
-        background-color: #f9f9f9;
+        background-color: #f9f9f9cd;
         padding: 20px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
@@ -301,7 +303,7 @@ ion-icon {
     .hamburger .line {
         width: 100%;
         height: 2px;
-        background-color: #dd4545;
+        background-color: #dd4545c9;
     }
 
     .nav-contents {
@@ -319,7 +321,7 @@ ion-icon {
         width: auto;
         left: 55%;
         flex-direction: column;
-        background-color: #f9f9f9;
+        background-color: #f9f9f9b8;
         padding: 20px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }

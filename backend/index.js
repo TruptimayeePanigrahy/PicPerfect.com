@@ -1,12 +1,14 @@
 const express = require("express");
+const { connection , createRedisClient} = require("./config/db");
 
-const {userRoute} = require("./routes/user.route");
-const {authRoute} =  require("./routes/auth.route");
-const {BookingRouter} = require("./routes/booking.route");
-const {connection, createRedisClient} = require("./config/db")
-const {adminrouter} = require("./routes/admin.route");
+const { adminrouter } = require("./routes/admin.route");
+
+// const { logger } = require("./middlewares/logger");
+const { userRoute } = require("./routes/user.route");
 
 
+const { BookingRouter } = require("./routes/booking.route");
+const { authRoute } = require("./routes/auth.route");
 
 const cors = require("cors");
 const { authMiddleWare } = require("./middlewares/auth");
@@ -15,7 +17,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/admin",adminrouter)
+// app.use("/admin",adminrouter)
 
 app.get("/", async (req, res) => {
   try {
@@ -45,7 +47,6 @@ app.listen(process.env.PORT, async () => {
       console.error("Redis connection error:", error);
     });
     console.log("Connected to Database");
-
   } catch (error) {
     console.log(error.message);
     console.log("Database not Connected");

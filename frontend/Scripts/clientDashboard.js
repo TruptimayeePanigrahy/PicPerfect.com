@@ -9,7 +9,7 @@ boxes.forEach(box => {
     })
 });
 
-const URL = `http://localhost:8185`;
+const URL = `https://rose-greyhound-cape.cyclic.app/`;
 const token = localStorage.getItem("token");
 const id = localStorage.getItem("id");
 const tbody = document.querySelector("tbody");

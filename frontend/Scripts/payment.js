@@ -1,7 +1,7 @@
 /*
 See on github: https://github.com/muhammederdem/credit-card-form
 */
-const url = "http://localhost:8185";
+const url = "https://rose-greyhound-cape.cyclic.app/";
 new Vue({
   el: "#app",
   data() {

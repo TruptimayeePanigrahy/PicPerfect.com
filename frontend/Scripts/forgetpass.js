@@ -1,4 +1,4 @@
-const BaseUrl_forgotPassword = `http://localhost:8185`;
+const BaseUrl_forgotPassword = `https://rose-greyhound-cape.cyclic.app/`;
 
 var form1 = document.getElementById("raj-form1");
 var form2 = document.getElementById("raj-form2");

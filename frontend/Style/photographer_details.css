@@ -4,12 +4,12 @@
 }
 body{
   font-family: sans-serif;
-  background: #ddeefc;
+  background: #ddeefcd4;
 }
 
 body::after {
   content: "";
-  background-image: url("https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246425885-19c58426-0161-4456-b90c-27b25927ceb6.jpeg");
+  background-image: url("https://img.freepik.com/premium-photo/info-graphics-business-pie-chart-character-person-with-modern-digital-photo-camera-3d-rendering_476612-21852.jpg?w=996");
   background-size: cover;
   background-position: center center;
   position: fixed;
@@ -27,7 +27,7 @@ body::after {
 /* Navbar */
 nav a {
   text-decoration: none;
-  color: rgb(67, 67, 67);
+  color: rgba(253, 247, 247, 0.773);
 }
 .logo_name>a>img {
   width: 70%;
@@ -39,7 +39,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: white;
+  background-color: rgba(11, 11, 11, 0.701);
   height: 70px;
   position: fixed;
   top: 0;
@@ -59,7 +59,9 @@ nav {
 }
 
 .nav-contents>a:hover {
-  color: #dd4545;
+  text-decoration: underline #fb07aa ;
+  text-decoration-thickness: 2px; 
+  transition: text-decoration 0.3s;
 }
 
 #head{
@@ -105,7 +107,7 @@ input:focus{
 }
 
 #main{
-  background-color: #fff;
+  background-color: #ffffffc0;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 20px;
   width: 60%;
@@ -180,13 +182,13 @@ form > div{
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #79A6FE;
+  background-color: #4080ffdf;
   color: #fff;
 }
 
 #submit_details:hover{
   cursor: pointer;
-  background-color: #8daef0;
+  background-color: #8daef0c7;
 }
 
 #upload_svg{
@@ -198,7 +200,7 @@ footer {
   align-items: center;
   padding: 14px 0;
   justify-content: space-around;
-  background-color: rgb(136, 136, 136);
+  background-color: rgba(136, 136, 136, 0.822);
   position: absolute;
   bottom: 0;
 }

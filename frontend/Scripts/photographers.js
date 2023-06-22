@@ -1,14 +1,16 @@
 let container = document.getElementById('search-results')
 // Fetch the images data from the server
-const url = "http://localhost:8185";
-
+const url = "https://rose-greyhound-cape.cyclic.app/";
+console.log("hii")
 async function fetchData() {
     try {
 
         const response = await fetch(`${url}/user/images`);
         const data = await response.json();
-
+console.log(data)
         Display(data.images, data.photographers);
+        
+        console.log(data.images,data.photographers)
     } catch (error) {
         console.error(error);
     }
