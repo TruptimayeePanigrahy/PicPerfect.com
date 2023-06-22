@@ -4,7 +4,7 @@
 A photographer booking system allows logged-in users to book a shoot with their desired photographer. <br>
 Enthusiastic and professional photographers can apply to become photographers on our website.
 
-#### Our Project is deployed here [PICPERFECT](https://64933664953b520617791aab--bucolic-semifreddo-7f7d1e.netlify.app/)
+#### Our Project is deployed here [PICPERFECT](https://649477dd681c054f6c29689b--splendid-tapioca-a964c8.netlify.app/)
 
 ### Team 
 - :woman_technologist: [Truptimayee Panigrahy](https://www.linkedin.com/in/truptimayee-panigrahy/)
@@ -41,11 +41,11 @@ If you are a professional or aspiring photographer, you have the opportunity to 
 
 ### Have a look at our routes in `Swagger`
 
-[API](https://bookmyshoot-backend.onrender.com/api-docs)
+[API](https://pic-perfect.onrender.com/api-docs)
 
 ### Deloployed Links
-Backend on [Render](https://tiny-cyan-boa-sock.cyclic.app) <br>
-Frontend on [Netlify](https://64933664953b520617791aab--bucolic-semifreddo-7f7d1e.netlify.app/)
+Backend on [Render](https://pic-perfect.onrender.com) <br>
+Frontend on [Netlify](https://649477dd681c054f6c29689b--splendid-tapioca-a964c8.netlify.app/)
 
 ## 🏷️ Tech Stack Used:-
 
