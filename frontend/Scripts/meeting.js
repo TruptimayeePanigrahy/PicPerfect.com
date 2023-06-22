@@ -1,9 +1,9 @@
 new AWN().asyncBlock(
-    fetch('https://video-chat-rbe8.onrender.com/start'),
+    fetch('https://video-api-7qc3.onrender.com/start'),
     'Room Joined Successfully',
 )
 
-const socket = io('https://video-chat-rbe8.onrender.com/');
+const socket = io('https://video-api-7qc3.onrender.com/');
 const videoDiv = document.getElementById('videoDiv');
 const hideA = document.getElementById('hide-audio');
 const hideV = document.getElementById('hide-video');
@@ -168,3 +168,5 @@ hangup.onclick = () => {
     // console.log("Call cut");
     window.location.href("https://icons.veryicon.com/png/o/miscellaneous/cloud-call-center/hang-up.png")
 }
+
+
