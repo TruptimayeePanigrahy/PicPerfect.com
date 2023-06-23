@@ -114,11 +114,11 @@ async function allPhotographer() {
 async function notification() {
     showLoader2();
     const req = await fetch(`${URL}/book/notifications`, {
-        method:"GET",
-        headers: {
-            "Content-type": "application/json",
-            "authorization": token
-        }
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     });
     const res = await req.json();    
     createDom(res.messages,"notification")
