@@ -241,17 +241,34 @@ async function meet(bookingId, name) {
         }),
       });
 
-      const request2 = await fetch(`${URL}/book/${bookingId}/notifications`, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          message: `${msg},${link},${photographer.user.name}`,
-        }),
-      });
-    });
+        allowOutsideClick: () => !Swal.isLoading()
+    })
+    document.getElementsByClassName('swal2-confirm swal2-styled')[0].addEventListener("click", async() => {
+        const msg = document.getElementById("message").value;
+        const link = `https://6490a14444734c17a14f1627--incredible-crostata-c45188.netlify.app/HTML/meeting.html?id=${room}`; // link to be changed after deployment
+        const request = await fetch(`${URL}/book/meeting/create`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            msg,
+            photographer: photographer.user._id,
+            link,
+            name,
+          }),
+        });
+        
+        const request2 = await fetch(`${URL}/book/${bookingId}/notifications`,{
+            method:"POST",
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body:JSON.stringify({message:`${msg},${link},${photographer.user.name}`})
+        })
+    })
 }
 
 async function meeting() {

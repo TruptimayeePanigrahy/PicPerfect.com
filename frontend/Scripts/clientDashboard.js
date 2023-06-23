@@ -116,8 +116,9 @@ async function notification() {
     const req = await fetch(`${URL}/book/notifications`, {
         method:"GET",
         headers: {
-            "Content-type": "application/json",
-            "authorization": token
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+
         }
     });
     const res = await req.json();    
@@ -138,8 +139,8 @@ function logout() {
             fetch(`${URL}/user/logout`,{
                 method:"POST",
                 headers: {
-                    "Content-type": "application/json;charset=UTF-8",
-                    "authorization": token
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
                 }
             })
             
