@@ -226,7 +226,7 @@ async function meet(bookingId, name) {
     .getElementsByClassName("swal2-confirm swal2-styled")[0]
     .addEventListener("click", async () => {
       const msg = document.getElementById("message").value;
-      const link = `https://pic-perfect.onrender.com?id=${room}`; // link to be changed after deployment
+      const link = `https://picperfect-photographer-booking-app.netlify.app/HTML/meeting.html?id=${room}`; // link to be changed after deployment
       const request = await fetch(`${URL}/book/meeting/create`, {
         method: "POST",
         headers: {
