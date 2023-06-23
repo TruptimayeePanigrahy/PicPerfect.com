@@ -119,6 +119,7 @@ async function notification() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
+
     });
     const res = await req.json();    
     createDom(res.messages,"notification")
@@ -138,8 +139,8 @@ function logout() {
             fetch(`${URL}/user/logout`,{
                 method:"POST",
                 headers: {
-                    "Content-type": "application/json;charset=UTF-8",
-                    "authorization": token
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
                 }
             })
             
