@@ -1,4 +1,4 @@
-const URL = "http://localhost:8185";
+const URL = "https://pic-perfect.onrender.com";
 const form = document.querySelector("form");
 const submit = document.getElementById("submit");
 
@@ -35,7 +35,7 @@ form.addEventListener("submit", async (e) => {
       } else if (response.role == "admin") {
         window.location.href = "../admin/admin.html";
       } else {
-        window.location.href = "../HTML/clientDashboard.html";
+        window.location.href = "../index.html";
       }
     }, 2000);
   } else {
@@ -55,6 +55,7 @@ form.addEventListener("submit", async (e) => {
 const google = document.getElementById("google");
 const github = document.getElementById("github");
 
+<<<<<<< HEAD
 google.addEventListener("click", ()=>{
   console.log("google");
   window.location.href = "http://localhost:8185/user/auth/google"
@@ -63,3 +64,12 @@ google.addEventListener("click", ()=>{
 github.addEventListener("click", ()=>{
   window.location.href = "http://localhost:8185/user/auth/github"
 })
+=======
+google.addEventListener("click", () => {
+  window.location.href = "https://pic-perfect.onrender.com/auth/google";
+});
+
+github.addEventListener("click", () => {
+  window.location.href = "https://pic-perfect.onrender.com/auth/github";
+});
+>>>>>>> 77cb14addf8d42d616fd7135c0e937d8ef317ea9

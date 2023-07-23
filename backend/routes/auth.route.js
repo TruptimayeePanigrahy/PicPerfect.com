@@ -1,6 +1,6 @@
 const express = require("express");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const GitHubStrategy = require('passport-github2').Strategy;
+
 // const FacebookStrategy = require("passport-facebook").Strategy;
 const { UserModel } = require("../models/user.model");
 // const passportFacebook = require("passport");
@@ -19,6 +19,23 @@ authRoute.get(
     "/google",
     passport.authenticate("google", { scope: ["email", "profile"] })
 );
+authRoute.get(
+    "/google/callback",
+    passport.authenticate('google', {
+        failureRedirect: '/auth/google/failure',
+        session: false
+    }),
+    function (req, res) {
+        let user = req.user;
+        const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
+
+
+    }
+);
+
+authRoute.get("/google/failure", (req, res) => {
+    res.redirect("https://localhost:8185/HTML/login.html")
+})
 
 passport.use(
     new GoogleStrategy(
@@ -69,56 +86,69 @@ authRoute.get(
 
 
 // Github Oauth
-authRoute.get(
-    "/github",
-    passportGithub.authenticate("github", { scope: ["user:email"] })
-);
+// authRoute.get(
+//     "/github",
+//     passportGithub.authenticate("github", { scope: ["user:email"] })
+// );
 
-authRoute.get(
-    "/github/callback",
-    passportGithub.authenticate("github", {
-        failureRedirect: "/login",
-        session: false,
-    }),
-    function (req, res) {
-        let user = req.user;
-        const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
+// authRoute.get(
+//     "/github/callback",
+//     passportGithub.authenticate("github", {
+//         failureRedirect: "/login",
+//         session: false,
+//     }),
+//     function (req, res) {
+//         let user = req.user;
+//         const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
 
-        res.redirect(`https://localhost:8185/frontend/index.html?id=${user._id}&token=${token}&role=${user.role}&approved=${user.approved}&username=${user.name}`);
-    }
-);
+//         res.redirect(`https://bookmyshoot.netlify.app/dashboard.html?id=${user._id}&token=${token}&role=${user.role}&approved=${user.approved}&username=${user.name}`);
+//     }
+// );
 
-authRoute.get("/github/failure", (req, res) => {
-    res.redirect("https://localhost:8185/frontend/HTML/login.html")
-})
+// authRoute.get("/github/failure", (req, res) => {
+//     res.redirect("https://bookmyshoot.netlify.app/login.html")
+// })
+
+// passportGithub.use(
+//     new GitHubStrategy(
+//         {
+//             clientID: process.env.GITHUB_CLIENT_ID,
+//             clientSecret: process.env.GITHUB_CLIENT_SECRET,
+//             callbackURL: "https://bookmyshoot-backend.onrender.com/auth/github/callback",
+//             scope: "user:email",
+//         },
+//         async function (request, accessToken, refreshToken, profile, done) {
+//             let email = profile.emails[0].value;
+
+//             let udata = await UserModel.findOne({ email });
+//             if (udata) {
+//                 return done(null, udata);
+//             }
+//             let name = profile._json.name;
+
+//             const user = new UserModel({
+//                 name,
+//                 email,
+//                 pass: uuidv4(),
+//             });
+//             await user.save();
+//             return done(null, user);
+//         }
+//     )
+// );
 
 passportGithub.use(
     new GitHubStrategy(
         {
             clientID: process.env.GITHUB_CLIENT_ID,
             clientSecret: process.env.GITHUB_CLIENT_SECRET,
-            callbackURL: "https://localhost:8185/user/auth/github/callback",
+            callbackURL: "https://localhost:8185/auth/github/callback",
             scope: "user:email",
         },
         async function (request, accessToken, refreshToken, profile, done) {
             let email = profile.emails[0].value;
 
-            let udata = await UserModel.findOne({ email });
-            if (udata) {
-                return done(null, udata);
-            }
-            let name = profile._json.name;
 
-            const user = new UserModel({
-                name,
-                email,
-                pass: uuidv4(),
-            });
-            await user.save();
-            return done(null, user);
-        }
-    )
-);
 
 module.exports = {
     authRoute

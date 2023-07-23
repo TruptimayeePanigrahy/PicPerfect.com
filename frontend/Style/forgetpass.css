@@ -1,5 +1,3 @@
-
-
 *{
     margin:0;
     padding:0;
@@ -14,8 +12,8 @@ body{
     background-size: cover;
     animation:
         pan 6s infinite alternate linear;
-  }
-  .raj-container{
+}
+.raj-container{
     width:400px;
     height: 350px;
     margin: 8% auto;
@@ -26,20 +24,20 @@ body{
     padding: 25px;
     position: relative;
     overflow: hidden;
-  }
-  h3{
+}
+h3{
     text-align: center;
     margin-bottom: 40px;
     color:#777;
-  }
-  .raj-container form{
+}
+.raj-container form{
     width:280px;
     position: absolute;
     top:100px;
     Left: 40px;
     transition: .5s;
-  }
-  form input{
+}
+form input{
     width:100%;
     padding: 10px 5px;
     margin: 5px o;
@@ -47,17 +45,17 @@ body{
     border-bottom:1px solid #999;
     outline: none;
     background: transparent;
-  }
-  ::placeholder{
-    Color:#777;
-  }
-  .raj-btn-box{
+}
+::placeholder{
+  Color:#777;
+}
+.raj-btn-box{
     width:100%;
     margin: 30px 0px;
     text-align: center;
     /* border: 1px solid red; */
-  }
-  form button{
+}
+form button{
     width:110px;
     height:35px;
     margin: 0 10px;
@@ -70,8 +68,8 @@ body{
     cursor: pointer;
     font-weight: 700;
     font-size: 0.8em;
-  }
-  form button:hover {
+}
+form button:hover {
     background: #043e9b;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   
@@ -131,8 +129,6 @@ body{
     .raj-container{
       margin:100px auto;
     }
-  
   }
   
-  
-  
+

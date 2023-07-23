@@ -9,7 +9,7 @@ body {
 
 body::after {
   content: "";
-  background-image: url("https://github-production-user-asset-6210df.s3.amazonaws.com/115514170/246425885-19c58426-0161-4456-b90c-27b25927ceb6.jpeg");
+  background-image: url("https://img.freepik.com/free-photo/empty-save-texture-room-light_1258-175.jpg?size=626&ext=jpg&ga=GA1.1.467505643.1667761873&semt=ais");
   background-size: cover;
   background-position: center center;
   position: fixed;
@@ -24,7 +24,8 @@ body::after {
 
 nav a {
   text-decoration: none;
-  color: rgb(67, 67, 67);
+  color: rgba(245, 244, 244, 0.697);
+  font-weight: 800;
 }
 
 /* -------------- Navbar ----------------- */
@@ -42,7 +43,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: white;
+  background-color: rgba(1, 1, 1, 0.629);
   height: 70px;
   position: fixed;
   top: 0;
@@ -63,7 +64,9 @@ nav {
 }
 
 .nav-contents>a:hover {
-  color: #dd4545;
+  text-decoration: underline #fb07aa ;
+  text-decoration-thickness: 2px; 
+  transition: text-decoration 0.3s;
 }
 
 /* ---------------------------------- Image   ----------------------------------- */
@@ -144,15 +147,16 @@ select:focus {
 }
 
 #gallery>div {
-  border: 1px solid red;
+  border: 1px solid rgba(255, 0, 212, 0.616);
 }
 
 .images_div {
-  border: 1px solid red;
+  border: 1px solid rgba(193, 2, 177, 0.609);
   display: flex;
   width: 440px;
   height: 200px;
-  border-radius: 20px;
+  border-radius: 40px;
+  /* border-radius: 10px; */
 }
 
 #name {
@@ -177,7 +181,7 @@ select:focus {
 
 .details_div {
   width: 440px;
-  height: 90px;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -188,7 +192,7 @@ select:focus {
 .details_div>div {
   /* border: 1px solid red; */
   /* margin-top: -15px; */
-  width: 35%;
+  width: 40%;
   padding: 10px;
 }
 
@@ -216,9 +220,9 @@ select:focus {
   justify-content: center;
   outline: 0;
   border: 0;
-  background-image: linear-gradient(to right, #f95798, #f4344e);
+  background-image: linear-gradient(to right, #301efc, #edfb56);
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 1px;
   color: #fff;
   font-weight: 500;
   text-align: center;
@@ -233,7 +237,8 @@ select:focus {
 
 
 #view_profile:hover {
-  background-image: linear-gradient(to right, #3ec7e0, #526bf4);
+  background-image: linear-gradient(to right, #e03ee0, #52f472);
+  
 }
 
 

@@ -9,7 +9,7 @@ boxes.forEach(box => {
     })
 });
 
-const URL = `http://localhost:8185`;
+const URL = `https://pic-perfect.onrender.com`;
 const token = localStorage.getItem("token");
 const id = localStorage.getItem("id");
 const tbody = document.querySelector("tbody");
@@ -101,11 +101,11 @@ function formatTime(time) {
 async function allPhotographer() {
     showLoader2();
     const req = await fetch(`${URL}/book/requests`, {
-        method:"GET",
-        headers: {
-            "Content-type": "application/json",
-            "authorization": token
-        }
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     });
     const res = await req.json();
     createDom(res, "all");
@@ -114,11 +114,12 @@ async function allPhotographer() {
 async function notification() {
     showLoader2();
     const req = await fetch(`${URL}/book/notifications`, {
-        method:"GET",
-        headers: {
-            "Content-type": "application/json",
-            "authorization": token
-        }
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+
     });
     const res = await req.json();    
     createDom(res.messages,"notification")
@@ -138,8 +139,8 @@ function logout() {
             fetch(`${URL}/user/logout`,{
                 method:"POST",
                 headers: {
-                    "Content-type": "application/json;charset=UTF-8",
-                    "authorization": token
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
                 }
             })
             
